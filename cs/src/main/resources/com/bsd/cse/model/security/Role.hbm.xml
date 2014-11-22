@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--[$Id: Group.hbm.xml,v 1.4 2011/02/25 13:04:23 thanasit Exp $]-->
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bsd.cse.model.security">
+    <class name="Role" table="CS_ROLE" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="ROLE_ID" type="long">
+            <generator class="sequence">
+                <param name="sequence">role_seq</param>
+            </generator>
+        </id>
+        <property name="roleName" column="ROLE_NAME" not-null="true"/>
+        <property name="roleDescription" column="ROLE_DESCRIPTION"/>
+        <property name="createdDate" column="CREATED_DATE" not-null="true"/>
+        <property name="createdBy" column="CREATED_BY" not-null="true"/>
+        <property name="updatedDate" column="UPDATED_DATE"/>
+        <property name="updatedBy" column="UPDATED_BY"/>
+        <set order-by="FUNCTION_ID" name="functions" table="CS_FUNCTION_ROLE" >
+            <key column="ROLE_ID" />
+            <many-to-many column="FUNCTION_ID" class="Function" />
+        </set>
+        
+        
+    </class>
+</hibernate-mapping>

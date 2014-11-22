@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt04_subreport1" pageWidth="555" pageHeight="842" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.210000000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="font-info" fontName="Tahoma" fontSize="10" isPdfEmbedded="true"/>
+	<style name="HeaderColumn" style="font-info" mode="Opaque" backcolor="#FFCC99" hAlign="Center" vAlign="Middle" isBold="true">
+		<box>
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="Detail-colum-label" style="font-info" hAlign="Left" vAlign="Middle" fontSize="5">
+		<box topPadding="0" leftPadding="2" rightPadding="2">
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="Detail-colum-value" style="font-info" mode="Opaque" backcolor="#CCCCCC" hAlign="Center" vAlign="Top" fontSize="5">
+		<box topPadding="0" leftPadding="2" rightPadding="2">
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new java.lang.Boolean (
+    $F{name}.equals("A")
+    ||
+    $F{name}.equals("B")
+    ||
+    $F{name}.equals("C")
+    ||
+    $F{name}.equals("D")
+    ||
+    $F{name}.equals("E")
+    ||
+    $F{name}.equals("F")
+    ||
+    $F{name}.equals("F1")
+    ||
+    $F{name}.equals("F2")
+)]]></conditionExpression>
+			<style mode="Opaque" backcolor="#CCCCCC"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new java.lang.Boolean ($F{name}.equals("G"))]]></conditionExpression>
+			<style backcolor="#3333FF"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new java.lang.Boolean ( $F{name}.equals("H")
+    ||     $F{name}.equals("I")
+    ||     $F{name}.equals("J")
+    ||     $F{name}.equals("K")
+    ||     $F{name}.equals("K1")
+    ||     $F{name}.equals("K2")
+    ||     $F{name}.equals("M")        )]]></conditionExpression>
+			<style mode="Opaque" backcolor="#FFFF33"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new java.lang.Boolean ( $F{name}.equals("O"))]]></conditionExpression>
+			<style mode="Opaque" backcolor="#99CC00"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new java.lang.Boolean (  $F{name}.equals("L"))]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" backcolor="#666666">
+				<pen lineColor="#000000"/>
+				<box topPadding="3" leftPadding="2">
+					<pen lineColor="#333333"/>
+					<topPen lineColor="#333333"/>
+					<leftPen lineColor="#333333"/>
+					<bottomPen lineColor="#333333"/>
+					<rightPen lineColor="#333333"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="Detail-colum-label_1" style="font-info" hAlign="Center" vAlign="Top" fontSize="5">
+		<box topPadding="0" leftPadding="2" rightPadding="2">
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<field name="name" class="java.lang.String"/>
+	<field name="description" class="java.lang.String"/>
+	<field name="op" class="java.math.BigDecimal[]"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement style="Detail-colum-label_1" stretchType="RelativeToTallestObject" x="0" y="0" width="25" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{name}.equals("K1") || $F{name}.equals("K2") || $F{name}.equals("F1") || $F{name}.equals("F2"))?"":$F{name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail-colum-label" stretchType="RelativeToTallestObject" x="25" y="0" width="110" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="Detail-colum-value" stretchType="RelativeToTallestObject" x="135" y="0" width="35" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{op}[0]]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="Detail-colum-value" stretchType="RelativeToTallestObject" x="170" y="0" width="35" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{op}[1]]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="Detail-colum-value" stretchType="RelativeToTallestObject" x="205" y="0" width="35" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{op}[2]]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="Detail-colum-value" stretchType="RelativeToTallestObject" x="240" y="0" width="35" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{op}[3]]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="Detail-colum-value" stretchType="RelativeToTallestObject" x="275" y="0" width="35" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{op}[4]]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="Detail-colum-value" stretchType="RelativeToTallestObject" x="310" y="0" width="35" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{op}[5]]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="Detail-colum-value" stretchType="RelativeToTallestObject" x="345" y="0" width="35" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{op}[6]]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="Detail-colum-value" stretchType="RelativeToTallestObject" x="380" y="0" width="35" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{op}[7]]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="Detail-colum-value" stretchType="RelativeToTallestObject" x="415" y="0" width="35" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{op}[8]]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="Detail-colum-value" stretchType="RelativeToTallestObject" x="450" y="0" width="35" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{op}[9]]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="Detail-colum-value" stretchType="RelativeToTallestObject" x="485" y="0" width="35" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{op}[10]]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="Detail-colum-value" stretchType="RelativeToTallestObject" x="520" y="0" width="35" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{op}[11]]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

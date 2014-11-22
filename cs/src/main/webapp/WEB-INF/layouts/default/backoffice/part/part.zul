@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/custom/core" prefix="c"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/WEB-INF/layouts/default/main/template.zul"?>
+<?page id="page" title="${c:l('default.page.global.label.app.title')} ${c:l('backoffice.part.page.label.part')}" ?>
+<?link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="/images/favicon.ico"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+   <panel self="@{define(content)}" hflex="1" vflex="1" style="padding:0px;margin:0px" apply="com.bsd.cse.zk.ctrl.backoffice.part.PartController">
+       <panelchildren>
+            <panel>
+                <panelchildren hflex="1"  sclass="background_title_content">
+                    <hbox height="30px" hflex="1" sclass="title_content"  align="center" pack="left">
+                        <label style="font-weight:bold;padding-top:10px;padding-left:5px" value="${c:l('backoffice.part.page.label.part')}"></label>
+                    </hbox>
+                </panelchildren>
+            </panel>
+            <panel  vflex="1">
+                <panelchildren  vflex="1"  hflex="1">
+                    <vbox vflex="1"  hflex="1" spacing="0">
+                        <hbox align="center" hflex="1" height="30px">
+                            <label value="${c:l('backoffice.part.page.label.partno')}"></label><textbox id="partNoSearchTxt"></textbox><label value="${c:l('backoffice.part.page.label.partname')}"></label><textbox id="partNameSearchTxt"></textbox><toolbarbutton id="searchBtn" image="/images/backoffice/search.png" tooltiptext="${c:l('backoffice.part.page.btn.search')}"></toolbarbutton><toolbarbutton id="newBtn" image="/images/backoffice/add.png" tooltiptext="${c:l('backoffice.part.page.btn.new')}"></toolbarbutton>
+                        </hbox>
+                        <listbox id="contentListbox" hflex="1" vflex="1" sizedByContent="true" >
+                            <listhead>                               
+                                <listheader id="partNoClm" style="min-width:150px" label="${c:l('backoffice.part.page.label.partno')}"></listheader>
+                                <listheader id="partNameClm" style="min-width:150px" label="${c:l('backoffice.part.page.label.partname')}"></listheader>
+                                <listheader id="numProcessesClm" style="min-width:150px" label="${c:l('backoffice.part.page.label.numberOfProcesses')}"></listheader>
+                                <listheader id="customerNameClm" style="min-width:150px" label="${c:l('backoffice.part.page.label.customer')}"></listheader>
+                                <listheader id="semiNameClm" style="min-width:150px" label="${c:l('backoffice.part.page.label.semimaterial')}"></listheader>
+                                <listheader id="minimumClm" style="min-width:150px" label="${c:l('backoffice.part.page.label.minimumstock')}"></listheader>
+                                <listheader style="min-width:150px" label="${c:l('backoffice.part.page.label.image')}"></listheader>
+                                <listheader align="center" style="min-width:100px" width="100px"  label="${c:l('backoffice.part.page.label.action')}"></listheader>
+                            </listhead>                           
+                        </listbox>
+                        <paging id="paging"/>
+                    </vbox>
+                </panelchildren>
+            </panel>
+            <window border="normal" visible="false" width="550px"  title="${c:l('backoffice.part.page.label.add-edit-part')}" id="editWin" >
+               <panel hflex="1">
+                   <panelchildren  hflex="1">
+                       <grid hflex="1" style="border:0px">
+                            <columns>
+                                <column width="390px"></column>
+                                <column width="140px"></column>
+                            </columns>
+                            <rows>
+                                <row style="border:0px;vertical-align:top">
+                                   <vbox  hflex="1" style="padding-left:20px,padding-right:20px;padding-top:10px;padding-bottom:10px">
+                                       <hbox hflex="1" widths="100px,,10px" align="center" style="padding-left:10px;padding-right:10px" visible="false"><label value="${c:l('backoffice.part.page.label.partid')}"></label><textbox id="idTxt" readonly="true" hflex="1"></textbox><label sclass="font_bold_red">*</label></hbox>
+                                       <hbox hflex="1" widths="100px,,10px" align="center" style="padding-left:10px;padding-right:10px"><label value="${c:l('backoffice.part.page.label.partno')}"></label><textbox id="partNoTxt" hflex="1" maxlength="100"></textbox><label sclass="font_bold_red">*</label></hbox>
+                                       <hbox hflex="1" widths="100px,,10px" align="center" style="padding-left:10px;padding-right:10px"><label value="${c:l('backoffice.part.page.label.partname')}"></label><textbox id="partNameTxt" hflex="1" maxlength="100"></textbox><label sclass="font_bold_red">*</label></hbox>
+                                       <hbox hflex="1" widths="100px,,10px" align="center" style="padding-left:10px;padding-right:10px"><label value="${c:l('backoffice.part.page.label.customer')}"></label><hbox hflex="1"><combobox id="customerCbox" hflex="1"></combobox><button id="addCusBtn" width="60px" mold="trendy" label="${c:l('backoffice.part.page.btn.add')}"></button></hbox><label sclass="font_bold_red">*</label></hbox>
+                                       <hbox hflex="1" widths="100px,,10px" align="center" style="padding-left:10px;padding-right:10px"><label value="${c:l('backoffice.part.page.label.semimaterial')}"></label><hbox hflex="1"><combobox id="semiMaterialCbox" hflex="1"></combobox><button id="addSemiBtn" width="60px" mold="trendy" label="${c:l('backoffice.part.page.btn.add')}"></button></hbox><label sclass="font_bold_red">*</label></hbox>
+                                       <hbox hflex="1" widths="100px,,10px" align="center" style="padding-left:10px;padding-right:10px"><label value="${c:l('backoffice.part.page.label.numberOfProcesses')}"></label><longbox id="numProcessesTxt" hflex="1" maxlength="18"></longbox><label sclass="font_bold_red">*</label></hbox>
+                                       <hbox hflex="1" widths="100px,,10px" align="center" style="padding-left:10px;padding-right:10px"><label value="${c:l('backoffice.part.page.label.minimumstock')}"></label><longbox id="minimumStockTxt" hflex="1" maxlength="18"></longbox><label sclass="font_bold_red">*</label></hbox>
+                                   </vbox>
+                                   <vbox style="padding-top:10px">
+                                       <image id="picImg"   width="120px" style="border:2px solid gray"></image>
+                                       <hbox><button id="uploadBtn" label="${c:l('backoffice.part.page.btn.upload')}" width="60px" mold="trendy" upload="true,maxsize=100000" ></button><button id="clearUploadBtn" width="60px" mold="trendy"  label="${c:l('backoffice.part.page.btn.clear')}"></button></hbox>
+                                   </vbox>
+                                </row>
+                                <row style="border:0px" spans="2">
+                                    <hbox hflex="1" align="center" pack="center"><button id="saveBtn" width="60px" mold="trendy" label="${c:l('backoffice.part.page.btn.save')}"></button><button id="cancelBtn" width="60px" mold="trendy" label="${c:l('backoffice.part.page.btn.cancel')}"></button></hbox>
+                                </row>
+                            </rows>
+                       </grid>
+                       
+                   </panelchildren>
+               </panel>
+           </window>
+           <window border="normal" visible="false"   title="${c:l('backoffice.view.page.label.viewimage')}" id="viewWin" >
+               <panel style="text-align:center;">
+                   <panelchildren style="text-align:center;">
+                       <vbox align="center" >
+                        <image id="viewImage" height="280px" style="border:2px solid gray;margin-top:10px;margin-bottom:10px"></image>
+                        <button id="closeBtn" label="Close" mold="trendy"></button>
+                       </vbox>
+                   </panelchildren>
+               </panel>
+           </window>
+      </panelchildren>
+   </panel>
+   
+</zk>

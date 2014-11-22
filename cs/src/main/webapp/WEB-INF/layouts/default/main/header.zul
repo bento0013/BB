@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="/images/favicon.ico"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/custom/core" prefix="c"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <panel id="northMainFrame" border="0" height="65px"  apply="com.bsd.cse.zk.ctrl.HeaderController">
+        <panelchildren hflex="1" sclass="header">
+            <borderlayout sclass="header" height="65px">
+                <west width="355px" border="0" sclass="header-left" >
+                </west>
+                <center flex="true" border="0" sclass="header">
+                </center>
+                <east width="580px"  border="0" sclass="hd_bg_layout" style="text-align:right">
+                    <panel border="0"  width="580px" height="65px" >
+                        <panelchildren sclass="header-right" >
+                            <hbox width="580px"  spacing="0" pack="right">                             
+                             <image height="65px" width="65px" id="loginImg" src="/images/security/user.png" />
+                             <vbox spacing="0"  height="65px"  align="right" style="padding-left:5px">
+                                <hbox  spacing="0" align="center" height="47px" width="30px" pack="right">
+                                    <toolbarbutton id="loginBtn" tooltiptext="${c:l('header.label.login')}" image="/images/template/login.png"></toolbarbutton>
+                                    <toolbarbutton id="logoutBtn" tooltiptext="${c:l('header.label.logout')}" image="/images/template/logout.png"></toolbarbutton>
+                                </hbox>
+                                <hbox  align="center"    pack="right" style="padding-right:5px">                                        
+                                        <label sclass="font_normal_bold" id="loginLbl" value="${c:l('header.label.logininfo.login')} "></label>
+                                        <label sclass="font_normal" id="logininfo"></label>
+                                        <label sclass="font_normal_bold" id="loginTimeLbl"  value=" ${c:l('header.label.logininfo.time')} "></label>
+                                        <label sclass="font_normal" id="logintime"></label>
+                                </hbox>
+                            </vbox>
+                            </hbox>
+                        </panelchildren>
+                    </panel>
+                </east>
+            </borderlayout>                                   
+        </panelchildren>
+    </panel>
+    <include src="/WEB-INF/layouts/default/main/menu.zul"/>
+    
+    <!--panel  border="0" height="20px"  >
+        <panelchildren  >
+            <hbox height="20px" sclass="nav_bg_layout" hflex="1" style="padding-left:10px">
+                <hbox  self="@{insert(nevigate)}"  height="20px" hflex="1" pack="left"  align="center">
+                </hbox>
+                <div style="position:absolute">
+                    <hbox  pack="right" align="center"  height="20px"  style="padding-right:10px;">
+                        <include src="/WEB-INF/layouts/defaults/main/login_state.zul"/>
+                    </hbox>
+                </div>
+            </hbox>
+        </panelchildren>
+    </panel-->
+</zk>

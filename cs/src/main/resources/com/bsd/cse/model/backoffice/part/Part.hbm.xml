@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--[$Id: Group.hbm.xml,v 1.4 2011/02/25 13:04:23 thanasit Exp $]-->
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bsd.cse.model.backoffice.part">
+    <class name="Part" table="CS_PART" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="ID" type="long">
+            <generator class="sequence">
+                <param name="sequence">part_seq</param>
+            </generator>
+        </id>
+        <property name="partNo" column="PART_NO" not-null="true"/>        
+        <property name="partName" column="PART_NAME" not-null="false"/>
+        <many-to-one name="customer" class="com.bsd.cse.model.backoffice.customer.Customer" column="CUSTOMER_ID"/>
+        <many-to-one name="semiMaterial" class="com.bsd.cse.model.backoffice.material.semi.SemiMaterial" column="SEMI_MATERIAL_ID"/>
+        <property name="amount" column="AMOUNT" not-null="true"/>
+        <property name="minimumStock" column="MINIMUM_STOCK" not-null="true"/>
+        <property name="imagePath" column="IMAGE_PATH" not-null="false"/>
+        <property name="numProcesses" column="NUMBER_OF_PROCESSES" not-null="false"/>
+        <property name="createdDate" column="CREATED_DATE" />
+        <many-to-one class="com.bsd.cse.model.security.UserInfo" name="createdBy" column="CREATED_BY" />
+        <property name="updatedDate" column="UPDATED_DATE" />
+        <many-to-one class="com.bsd.cse.model.security.UserInfo" name="updatedBy" column="UPDATED_BY" />
+        
+    </class>
+</hibernate-mapping>

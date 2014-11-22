@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--[$Id: Group.hbm.xml,v 1.4 2011/02/25 13:04:23 thanasit Exp $]-->
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bsd.cse.model.dsb">
+    <class name="DashboardPartSetting" table="CS_DASHBOARD_PART_SETTING" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="DASHBOARD_PART_SETTING_ID" type="long">
+            <generator class="sequence">
+                <param name="sequence">dashboard_part_setting_seq</param>
+            </generator>
+        </id>        
+        <many-to-one class="com.bsd.cse.model.backoffice.part.Part" name="part"  column="PART_ID" />        
+    </class>
+</hibernate-mapping>

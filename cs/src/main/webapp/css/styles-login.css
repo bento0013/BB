@@ -1,0 +1,296 @@
+﻿/* CSS Document */
+
+BODY{
+	background-image: url(../images/login/login2.png);
+	background-repeat: no-repeat;
+	background-color:#edeeee;
+	margin: 0px;
+	padding: 0px 0px 0px 0px;
+	font-size: 10px;
+} 
+BODY.login {
+	font-family: Tahoma,Arial,sans-serif;color:black;background-color:#EAEBEC;
+	background-image: url(../images/login/bg.gif);
+	background-repeat:repeat;
+	margin: 0px 0px 0px 0px;
+	padding: 50px 0px 0px 0px;
+	font-size: 12px;
+} 
+
+td, tr {font-family:Tahoma,Arial,sans-serif;background:none;color:black;font-size:12px;}
+H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} 
+H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} 
+H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} 
+B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} 
+P {font-family:Tahoma,Arial,sans-serif;background:none;color:black;font-size:12px;}
+A {color : #000; text-decoration:none;}
+A.name {color : #000; text-decoration:none;}
+HR {color : #525D76;}
+Select {font-size:11px;}
+TH.topic{
+	background-image: url(../images/login/content_topic.png);
+	background-repeat: repeat-x;
+	color: #06265B;
+	height: 35px;
+	font-size:14px;
+	text-align: left;
+	padding-left: 12px;
+}
+
+TH.topic2{
+	background-image: url(../images/login/content_topic2.png);
+	background-repeat: repeat-x;
+	color: #06265B;
+	height: 35px;
+	font-size:14px;
+	text-align: left;
+	padding-left: 12px;
+}
+
+TD.detail{
+	border-bottom: 1px solid #4B6CA4;	
+	padding-right: 10px;
+}
+
+fieldset{ 
+	border: 3px soild #4B6CA4;
+	margin-left: 12px;
+	margin-bottom: 15px;
+	padding: 5px; 
+}
+
+legend {
+	color: #305490;
+	font-size:12px;
+	font-weight:bold;
+}
+/*	border: 1px solid Red;*/
+#login1 {
+	background-image: url(../images/login/login-bg01.png);
+	background-repeat: no-repeat;
+	height: 160px;
+	width: 583px;
+}
+#login2 {
+	background-image: url(../images/login/login-bg02.png);
+	background-repeat: no-repeat;
+	height: 188px;
+	width: 583px;
+}
+#login3 {
+	background-image: url(../images/login/login-bg03.png);
+	background-repeat: no-repeat;
+	height: 75px;
+	width: 583px;
+}
+#field{
+	background: none;
+}
+
+.table-header{
+	background-image: url(../images/login/header.png);
+	background-repeat: no-repeat;
+	height: 100px;
+	width: 930px;
+	vertical-align: top;
+	padding-left: 30px;
+	padding-right: 21px;
+}
+
+#content{
+	border: 1px solid #877340;
+}
+
+#table-content{
+	background-image: url(../images/login/content_bg.png);
+	background-repeat: repeat-y;
+	height: 100%;
+}
+
+.table-search{
+	background-image: url(../images/login/serach_bg.png);
+	background-repeat: no-repeat;
+	height: 57px;
+	width: 577px;
+}
+Table.table-result TH {
+	background-image: url(../images/login/table_th.gif);
+	background-repeat: repeat-x;
+	color: #1A3B7E;
+	height: 39px;
+	text-align: center;
+}
+Table.table-result TD {
+	background-image: url(../images/login/table_tr.gif);
+	background-repeat: repeat-x;
+	color: #1A3B7E;
+	height: 37px;
+	text-align: center;
+}
+
+Table.table TH {
+	background-image: url(../images/login/table_th.gif);
+	background-repeat: repeat-x;
+	color: #1A3B7E;
+	height: 39px;
+	
+}
+
+TD.topic {
+	background-image: url(../images/login/title_bg.gif);
+	background-repeat: repeat-x;
+	color: #1A3B7E;
+	font-weight:bold;
+	height: 37px;
+	padding-left: 10px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-color: #d3bd85;
+	border-top-width: 1px;
+	border-top-color: #d3bd85;
+	padding-right: 10px;
+	border-right-width: 1px;
+	border-right-color: #d3bd85;
+
+
+
+
+
+}
+
+Table.table TD {
+	background: none;
+	color: #1A3B7E;
+	height: 25px;
+	padding-left: 12px;
+}
+
+
+.over_old {
+	background-color: #f6ebcf;
+	height: 25px;
+	border-top: 1px #e4d9be;
+	border-right: 1px Solid #e4d9be;
+	border-bottom: 1px Solid #e4d9be;
+	border-left: 1px #e4d9be;
+
+}
+
+.over {
+	background: #faf3e2;
+	height: 25px;
+	border-top: 1px #e4d9be;
+	border-right: 1px Solid #e4d9be;
+	border-bottom: 1px Solid #e4d9be;
+	border-left: 1px #e4d9be;
+
+}
+
+
+.textbox {
+	background-image: url(../images/login/textbox_bg.png);
+	border: 1px solid #0066CC;
+	width:160px; 
+	height: 31px; 
+	padding: 5px;
+}
+
+.tb_search {
+	background-image: url(../images/login/textbox_search.png);
+	border: none;
+	width: 336px; 
+	height: 27px; 
+	padding: 5px;
+}
+
+.tb_field {
+	background-image: url(../images/login/textbox_field.png);
+	border: none;	
+	width: 229px; 
+	height: 31px; 
+	padding: 5px;
+}
+/*tab*/
+.left_tab_active{
+	background-image: url(../images/login/left_tab_active.gif);
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 26px; 	
+}
+
+.tab_active{
+	background-image: url(../images/login/tab_active.gif);
+	background-repeat: repeat-x;
+	height: 26px; 	
+	padding: 5px 15px;
+	color: #663300;
+	font-weight:bold
+}
+
+.right_tab_active{
+	background-image: url(../images/login/right_tab_active.gif);
+	background-repeat: no-repeat;
+	width: 15px;
+	height: 26px; 	
+}
+
+.left_tab{
+	background-image: url(../images/login/left_tab.gif);
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 26px; 	
+}
+
+.tab{
+	background-image: url(../images/login/tab.gif);
+	background-repeat: repeat-x;
+	height: 26px; 
+	padding: 5px 15px;
+	font-weight:bold	
+}
+
+.right_tab{
+	background-image: url(../images/login/right_tab.gif);
+	background-repeat: no-repeat;
+	width: 15px;
+	height: 26px; 	
+}
+
+/*menu*/
+.manubar{
+	background-image: url(../images/login/bar_bg.gif);
+	background-repeat: repeat-x;
+}
+.left-manubar{
+	background-image: url(../images/login/bar_bg_left.gif);
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 34px; 	
+}
+.right-manubar{
+	background-image: url(../images/login/bar_bg_right.gif);
+	background-repeat: no-repeat;
+	width: 10px; 
+	height: 34px; 	
+}
+
+input.button
+{
+   font-size:11px;
+   font-family:Arial,sans-serif;
+   font-weight:bold;
+   color:#FFFFFF;
+   background-color:#CC9933;
+   border-top-style:double;
+   border-top-color:#CC9933;
+   border-top-width:4px;
+   border-bottom-style:double;
+   border-bottom-color:#CC9933;
+   border-bottom-width:4px;
+   border-left-style:double;
+   border-left-color:#CC9933;
+   border-left-width:4px;
+   border-right-style:double;
+   border-right-color:#CC9933;
+   border-right-width:4px;}

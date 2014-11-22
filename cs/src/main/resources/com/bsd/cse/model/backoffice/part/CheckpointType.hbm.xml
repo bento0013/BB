@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--[$Id: Group.hbm.xml,v 1.4 2011/02/25 13:04:23 thanasit Exp $]-->
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bsd.cse.model.backoffice.part">
+    <class name="CheckpointType" table="CS_CHECKPOINT_TYPE" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="CHECKPOINT_TYPE_ID" type="long">
+            <generator class="assigned"/>
+        </id>
+        <property name="name" column="CHECKPOINT_TYPE_NAME" not-null="true"/>
+    </class>
+</hibernate-mapping>

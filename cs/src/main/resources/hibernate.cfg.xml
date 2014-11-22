@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.datasource">java:comp/env/jdbc/CSE</property>
+
+
+		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="show_sql">false</property>
+		<property name="format_sql">true</property>
+		<property name="use_outer_join">true</property>
+		<property name="max_fetch_depth">4</property>
+		<property name="jdbc.batch_size">50</property>
+                <property name="default_schema">public</property>
+                <property name="current_session_context_class">thread</property>
+                <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+                <property name="cache.use_structured_entries">true</property>                
+                <property name="hbm2ddl.auto">update</property>
+		<!--property name="query.factory_class">org.hibernate.hql.ast.ASTQueryTranslatorFactory</property -->
+                <mapping resource="/com/bsd/cse/model/security/Team.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/security/Function.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/security/Role.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/security/User.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/security/UserInfo.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/security/Group.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/trans/TransactionLog.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/department/Department.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/machine/MachineModelType.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/machine/MachineModel.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/machine/Machine.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/material/raw/RawType.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/material/semi/SemiType.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/measurement/MeasurementToolType.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/measurement/MeasurementToolModel.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/measurement/MeasurementTool.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/security/Setting.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/material/raw/RawMaterial.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/material/semi/SemiMaterial.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/customer/Customer.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/part/Part.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/part/Process.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/part/ProcessPart.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/part/Checkpoint.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/part/CheckpointType.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/part/CheckpointUnit.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/backoffice/part/NgReason.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/input/Time.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/input/ProductLine.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/input/MachineTime.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/input/MeasurementPart.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/input/FileMeasurementPart.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/input/MeasurementTime.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/input/MeasurementPosition.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/input/NgProductLineRecord.hbm.xml" />
+
+                <mapping resource="/com/bsd/cse/model/stock/StockType.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/stock/TransferType.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/stock/FgStockTran.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/stock/RawStockTran.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/stock/SemiStockTran.hbm.xml" />
+                <mapping resource="/com/bsd/cse/model/DashboardPartSetting.hbm.xml" />
+
+                                	
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt05_subreport2" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="border-left-right">
+		<box>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<field name="name" class="java.lang.String"/>
+	<field name="value" class="java.math.BigDecimal"/>
+	<field name="value1" class="java.math.BigDecimal"/>
+	<field name="value2" class="java.math.BigDecimal"/>
+	<field name="value3" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="105" splitType="Stretch">
+			<lineChart>
+				<chart isShowLegend="true" theme="default">
+					<reportElement style="border-left-right" x="0" y="0" width="802" height="105"/>
+					<chartTitle>
+						<font fontName="Tahoma" size="9"/>
+					</chartTitle>
+					<chartSubtitle>
+						<font fontName="Tahoma" size="9"/>
+					</chartSubtitle>
+					<chartLegend position="Right">
+						<font fontName="Tahoma" size="9"/>
+					</chartLegend>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["R"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{name}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{value}]]></valueExpression>
+						<labelExpression><![CDATA[$F{name}]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["CL"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{name}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{value1}]]></valueExpression>
+						<labelExpression><![CDATA[$F{name}]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["UCL"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{name}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{value2}]]></valueExpression>
+						<labelExpression><![CDATA[$F{name}]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["LCL"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{name}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{value3}]]></valueExpression>
+						<labelExpression><![CDATA[$F{name}]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<linePlot isShowLines="true" isShowShapes="false">
+					<plot>
+						<seriesColor seriesOrder="0" color="#6666FF"/>
+						<seriesColor seriesOrder="1" color="#FF6699"/>
+						<seriesColor seriesOrder="2" color="#CC6600"/>
+						<seriesColor seriesOrder="3" color="#CCCCFF"/>
+						<seriesColor seriesOrder="4" color="#66FF66"/>
+						<seriesColor seriesOrder="5" color="#336600"/>
+						<seriesColor seriesOrder="6" color="#00FFFF"/>
+					</plot>
+					<categoryAxisFormat>
+						<axisFormat>
+							<labelFont>
+								<font fontName="Tahoma" size="9"/>
+							</labelFont>
+							<tickLabelFont>
+								<font fontName="Tahoma" size="9"/>
+							</tickLabelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat>
+							<labelFont>
+								<font fontName="Tahoma" size="9"/>
+							</labelFont>
+							<tickLabelFont>
+								<font fontName="Tahoma" size="9"/>
+							</tickLabelFont>
+						</axisFormat>
+					</valueAxisFormat>
+				</linePlot>
+			</lineChart>
+		</band>
+	</summary>
+</jasperReport>

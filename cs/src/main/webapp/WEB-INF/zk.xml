@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	Created by ZK Studio
+-->
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+          
+     <library-property>
+         <name>org.zkoss.zul.theme.fontSizeM</name>
+         <value>11px</value>
+     </library-property>
+     <library-property>
+         <name>org.zkoss.zul.theme.fontSizeS</name>
+         <value>11px</value>
+     </library-property>
+     <library-property>
+         <name>org.zkoss.zul.theme.fontSizeXS</name>
+         <value>11px</value>
+     </library-property>
+     <library-property>
+         <name>org.zkoss.zul.theme.fontFamilyT</name>
+         <value>Tahoma</value>
+     </library-property>
+     <library-property>
+         <name>org.zkoss.zul.theme.fontFamilyC</name>
+         <value>Tahoma</value>
+     </library-property>
+
+     <!--session-config>
+        <device-type>ajax</device-type>
+        <automatic-timeout/>
+        <timeout-uri>/timeout.jsp</timeout-uri>
+     </session-config-->
+
+    <system-config>
+        <disable-event-thread>false</disable-event-thread>
+        <!--ui-factory-class>
+                org.zkoss.zk.ui.http.SerializableUiFactory
+        </ui-factory-class-->
+    </system-config>
+   <desktop-config>
+      <!--theme-provider-class>com.bsd.zktheme.ThemeProvider</theme-provider-class-->
+      <theme-uri>/css/theme.css</theme-uri>
+   </desktop-config>
+    <library-property>
+         <name>org.zkoss.theme.preferred</name>
+         <value>silvergray</value>
+    </library-property>
+</zk>

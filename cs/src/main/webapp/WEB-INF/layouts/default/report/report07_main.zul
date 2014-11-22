@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/custom/core" prefix="c"?>
+<?page id="page" title="${c:l('default.page.global.label.app.title')} ${c:l('report08.page.label.report08')}" ?>
+<?link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="/images/favicon.ico"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <panel hflex="1" vflex="1" style="padding:0px;margin:0px" apply="com.bsd.cse.zk.ctrl.rpt.ReportData07MainController">
+       <panelchildren hflex="1" vflex="1">           
+            <grid id="oeeFactorGrid">
+                <columns>
+                    <column label="OEE Factor" width="100px">
+
+                    </column>
+                    <column label="Process #1" width="80px">
+
+                    </column>
+                    <column label="Process #2" width="80px">
+
+                    </column>
+                    <column label="Process #3" width="80px">
+
+                    </column>
+                    <column label="Process #4" width="80px">
+
+                    </column>
+                    <column label="Process #5" width="80px">
+
+                    </column>
+                    <column label="Process #6" width="80px">
+
+                    </column>
+                    <column label="Process #7" width="80px">
+
+                    </column>
+                    <column label="Process #8" width="80px">
+
+                    </column>
+                    <column label="Process #9" width="80px">
+
+                    </column>
+                    <column label="Process #10" width="80px">
+
+                    </column>
+                    <column label="Process #11" width="80px">
+
+                    </column>
+                    <column label="Process #12" width="80px">
+
+                    </column>
+                    <!--column forEach="${processes}" style="min-width:50px">${each.processName}</column-->
+                </columns>
+            </grid>
+      </panelchildren>
+   </panel>
+</zk>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language-addon>
+	<addon-name>silvergray</addon-name>
+	<depends>zul,zkex,zkmax</depends>
+	<language-name>xul/html</language-name>
+	<version>
+		<version-class>com.bsd.cse.theme.Version</version-class>
+		<version-uid>5.0.6</version-uid>
+		<zk-version>5.0.6</zk-version><!-- or later -->
+	</version>
+	<javascript-module name="silvergray" version="5.0.6"/>
+        <!--stylesheet href="~./silvergray/cs.css.dsp" type="text/css"/-->
+	<stylesheet href="~./silvergray/img.css.dsp" type="text/css"/>
+	<stylesheet href="~./silvergray/color.css.dsp" type="text/css"/> 
+</language-addon>

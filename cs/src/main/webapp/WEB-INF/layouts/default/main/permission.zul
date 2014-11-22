@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/custom/core" prefix="c"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/WEB-INF/layouts/default/main/template.zul"?>
+<?page id="page" title="${c:l('default.page.global.label.app.title')} ${c:l('security.role.page.label.app.title')}" ?>
+<?link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="/images/favicon.ico"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+       <panel self="@{define(content)}"  hflex="1" vflex="1" style="padding:0px;margin:0px" >
+           <panelchildren hflex="1" vflex="1">
+               <hbox hflex="1" vflex="1" pack="center" align="center">
+                    <label sclass="content_large">Permission Denied</label>
+               </hbox>
+                
+          </panelchildren>
+       </panel>
+</zk>

@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OEE Part Report" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="font-info" fontName="Tahoma" fontSize="10" isPdfEmbedded="true"/>
+	<style name="Header" style="font-info" hAlign="Center" vAlign="Middle" fontSize="16" isBold="true">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Column Header" style="font-info" hAlign="Center" vAlign="Middle" fontSize="11" isBold="true">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Detail Value Str" style="font-info" hAlign="Left" vAlign="Middle" fontSize="11" isBold="false">
+		<box leftPadding="3" rightPadding="3">
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Detail Value Date" style="font-info" hAlign="Center" vAlign="Middle" fontSize="11" isBold="false">
+		<box leftPadding="3" rightPadding="3">
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Detail Value Number" style="font-info" hAlign="Right" vAlign="Middle" pattern="#,##0" fontSize="10" isBold="false">
+		<box leftPadding="3" rightPadding="3">
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Detail Header Column" style="font-info" hAlign="Left" vAlign="Middle" fontSize="5" isBold="true">
+		<box leftPadding="3" rightPadding="3">
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Detail Header Value" style="font-info" hAlign="Left" vAlign="Middle" fontSize="5">
+		<box leftPadding="3" rightPadding="3">
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="paging" style="font-info" vAlign="Middle"/>
+	<style name="Detail Value Center" style="font-info" hAlign="Center" vAlign="Middle" fontSize="10" isBold="false">
+		<box leftPadding="3" rightPadding="3">
+			<pen lineWidth="0.75" lineColor="#000000"/>
+			<topPen lineWidth="0.0" lineColor="#000000"/>
+			<leftPen lineWidth="0.75" lineColor="#000000"/>
+			<bottomPen lineWidth="0.75" lineColor="#000000"/>
+			<rightPen lineWidth="0.75" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="page-left-top-bottom-box" style="font-info" hAlign="Left" vAlign="Middle" fontSize="6">
+		<box leftPadding="2">
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="page-right-top-bottom-box" style="font-info" hAlign="Left" vAlign="Middle" fontSize="5">
+		<box leftPadding="2">
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="HeaderColumn" style="font-info" mode="Opaque" backcolor="#FFCC99" hAlign="Center" vAlign="Middle" isBold="true">
+		<box>
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<parameter name="startDate" class="java.lang.String">
+		<defaultValueExpression><![CDATA["'2011-11-01'"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="endDate" class="java.lang.String">
+		<defaultValueExpression><![CDATA["'2011-12-01'"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="requestDate" class="java.lang.String"/>
+	<parameter name="requestBy" class="java.lang.String"/>
+	<parameter name="period" class="java.lang.String"/>
+	<parameter name="sqlMain" class="java.lang.String"/>
+	<parameter name="CS_IMAGE" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\job\\CS-Engineering\\svnproject\\cs\\src\\main\\resources\\com\\bsd\\cse\\jreport\\jrxml\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="subReport1" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="subReport2" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="subReport3" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="subReport4" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="subReport5" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="parameter1" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[$P!{sqlMain}]]>
+	</queryString>
+	<field name="requestDate" class="java.util.Date"/>
+	<field name="partName" class="java.lang.String"/>
+	<field name="totalParts" class="java.util.List"/>
+	<field name="timeParts" class="java.util.List"/>
+	<field name="supportVariables" class="java.util.List"/>
+	<field name="oeeFactors" class="java.util.List"/>
+	<field name="operations" class="java.util.List"/>
+	<field name="machineName" class="java.lang.String"/>
+	<field name="partNo" class="java.lang.String"/>
+	<field name="shift" class="java.lang.String"/>
+	<field name="workingHour" class="java.lang.Integer"/>
+	<field name="employeeId" class="java.lang.String"/>
+	<field name="employeeName" class="java.lang.String"/>
+	<field name="part" class="java.lang.String[]"/>
+	<field name="process" class="java.lang.String[]"/>
+	<group name="PartName">
+		<groupExpression><![CDATA[$F{partName}]]></groupExpression>
+	</group>
+	<group name="machineName" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{machineName}]]></groupExpression>
+		<groupHeader>
+			<band height="39">
+				<printWhenExpression><![CDATA[new java.lang.Boolean($F{employeeId}==null)]]></printWhenExpression>
+				<staticText>
+					<reportElement style="page-left-top-bottom-box" x="448" y="13" width="52" height="13"/>
+					<textElement>
+						<font size="5" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Request Date :]]></text>
+				</staticText>
+				<textField pattern="">
+					<reportElement style="page-right-top-bottom-box" x="500" y="13" width="55" height="13"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{requestDate}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="page-left-top-bottom-box" x="448" y="26" width="52" height="13"/>
+					<textElement>
+						<font size="5" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Request By :]]></text>
+				</staticText>
+				<textField>
+					<reportElement style="page-right-top-bottom-box" x="500" y="26" width="55" height="13"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{requestBy}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="page-left-top-bottom-box" x="448" y="0" width="84" height="13"/>
+					<textElement textAlignment="Right">
+						<font size="5"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement style="page-right-top-bottom-box" x="532" y="0" width="23" height="13"/>
+					<textElement>
+						<font size="5"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<image>
+					<reportElement style="Header" x="0" y="0" width="210" height="39"/>
+					<imageExpression class="java.lang.String"><![CDATA[$P{CS_IMAGE}]]></imageExpression>
+				</image>
+				<textField>
+					<reportElement style="Header" x="210" y="0" width="238" height="39"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA["Analysis Of \n["+$F{machineName}+"]"]]></textFieldExpression>
+				</textField>
+			</band>
+			<band height="39">
+				<printWhenExpression><![CDATA[new java.lang.Boolean($F{employeeId}!=null)]]></printWhenExpression>
+				<textField>
+					<reportElement style="page-right-top-bottom-box" x="500" y="26" width="55" height="13"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{requestBy}]]></textFieldExpression>
+				</textField>
+				<image>
+					<reportElement style="Header" x="0" y="0" width="210" height="39"/>
+					<imageExpression class="java.lang.String"><![CDATA[$P{CS_IMAGE}]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement style="page-left-top-bottom-box" x="448" y="26" width="52" height="13"/>
+					<textElement>
+						<font size="5" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Request By :]]></text>
+				</staticText>
+				<textField>
+					<reportElement style="page-left-top-bottom-box" x="448" y="0" width="84" height="13"/>
+					<textElement textAlignment="Right">
+						<font size="5"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="">
+					<reportElement style="page-right-top-bottom-box" x="500" y="13" width="55" height="13"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{requestDate}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Header" x="210" y="0" width="238" height="39"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA["Analysis Of \n["+$F{employeeName}+"]"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="page-left-top-bottom-box" x="448" y="13" width="52" height="13"/>
+					<textElement>
+						<font size="5" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Request Date :]]></text>
+				</staticText>
+				<textField evaluationTime="Report">
+					<reportElement style="page-right-top-bottom-box" x="532" y="0" width="23" height="13"/>
+					<textElement>
+						<font size="5"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="15">
+				<staticText>
+					<reportElement style="Detail Header Column" x="0" y="0" width="135" height="15"/>
+					<textElement/>
+					<text><![CDATA[Remark]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Detail Header Value" x="135" y="0" width="420" height="15"/>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement style="Detail Header Column" x="0" y="0" width="70" height="15"/>
+				<textElement/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="Detail Header Value" mode="Opaque" x="70" y="0" width="147" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{requestDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Detail Header Column" x="217" y="0" width="248" height="15"/>
+				<textElement/>
+				<text><![CDATA[Working Hours]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail Header Column" x="465" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.valueOf($F{workingHour})+" Hours"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<staticText>
+				<reportElement style="Detail Header Column" x="0" y="0" width="70" height="15"/>
+				<textElement/>
+				<text><![CDATA[Shift]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail Header Value" x="70" y="0" width="395" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{shift}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail Header Value" x="465" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[new java.lang.Integer($F{workingHour}.intValue()*60)]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<staticText>
+				<reportElement style="Column Header" x="0" y="0" width="135" height="15"/>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="HeaderColumn" x="135" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{part}[0]+"\n"+$F{process}[0]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="HeaderColumn" x="170" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{part}[1]+"\n"+$F{process}[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="HeaderColumn" x="205" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{part}[2]+"\n"+$F{process}[2]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="HeaderColumn" x="240" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{part}[3]+"\n"+$F{process}[3]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="HeaderColumn" x="275" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{part}[4]+"\n"+$F{process}[4]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="HeaderColumn" x="310" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{part}[5]+"\n"+$F{process}[5]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="HeaderColumn" x="345" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{part}[6]+"\n"+$F{process}[6]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="HeaderColumn" x="380" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{part}[7]+"\n"+$F{process}[7]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="HeaderColumn" x="415" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{part}[8]+"\n"+$F{process}[8]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="HeaderColumn" x="450" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{part}[9]+"\n"+$F{process}[9]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="HeaderColumn" x="485" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{part}[10]+"\n"+$F{process}[10]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="HeaderColumn" x="520" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{part}[11]+"\n"+$F{process}[11]]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15" splitType="Immediate">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="15"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{operations})]]></dataSourceExpression>
+				<subreportExpression class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{subReport1}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="15" splitType="Immediate">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="15"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{totalParts})]]></dataSourceExpression>
+				<subreportExpression class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{subReport2}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="15" splitType="Immediate">
+			<subreport>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="15"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{timeParts})]]></dataSourceExpression>
+				<subreportExpression class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{subReport3}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="15">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="15"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{supportVariables})]]></dataSourceExpression>
+				<subreportExpression class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{subReport4}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="15">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="15"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{oeeFactors})]]></dataSourceExpression>
+				<subreportExpression class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{subReport5}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<noData>
+		<band height="134">
+			<textField evaluationTime="Report">
+				<reportElement style="page-right-top-bottom-box" x="532" y="0" width="23" height="13"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="page-right-top-bottom-box" x="500" y="26" width="55" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{requestBy}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement style="page-right-top-bottom-box" x="500" y="13" width="55" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{requestDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="page-left-top-bottom-box" x="448" y="26" width="52" height="13"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Request By :]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Header" x="210" y="0" width="238" height="39"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Analysis Of"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="page-left-top-bottom-box" x="448" y="13" width="52" height="13"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Request Date :]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="page-left-top-bottom-box" x="448" y="0" width="84" height="13"/>
+				<textElement textAlignment="Right">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement style="Header" x="0" y="0" width="210" height="39"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{CS_IMAGE}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Detail Value Center" x="0" y="39" width="555" height="93"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[No record found.]]></text>
+			</staticText>
+		</band>
+	</noData>
+</jasperReport>

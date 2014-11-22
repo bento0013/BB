@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- $Id: log4j.xml,v 1.1 2011/01/31 12:57:23 thanasit Exp $ //-->
+
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} %5p %c{1} %m%n"/>
+        </layout>
+    </appender>
+    <appender name="rollinglog" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${catalina.base}/logs/tomcat-online.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+          <param name="ConversionPattern" value="%d{HH:mm:ss} %5p %c{1} %m%n"/>
+        </layout>
+    </appender>
+
+
+    <category name="com.bsd">
+        <priority value="debug"/>
+        <appender-ref ref="console"/>
+        <appender-ref ref="rollinglog"/>
+    </category>
+
+    <category name="org">
+        <priority value="info" />
+        <appender-ref ref="console" />
+        <appender-ref ref="rollinglog"/>
+    </category>
+   
+
+    <category name="com.opensymphony">
+        <priority value="info" />
+        <appender-ref ref="console" />
+        <appender-ref ref="rollinglog"/>
+    </category>
+
+
+
+    <category name="freemarker">
+        <priority value="info" />
+        <appender-ref ref="console" />
+    </category>
+
+</log4j:configuration>

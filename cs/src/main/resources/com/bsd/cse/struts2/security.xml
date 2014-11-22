@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- NOTE: json-default also extends struts-default -->
+    
+    <package name="security" extends="secure" namespace="/secure/security">
+       <action name="rm" class="com.bsd.cse.struts2.action.security.SecurityAction" method="role">
+           <interceptor-ref name="securityStack" />           
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10602</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10602</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/security/role/role.zul</param>
+           </result>
+       </action>
+       <action name="ugm" class="com.bsd.cse.struts2.action.security.SecurityAction" method="userGroup">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10601</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10601</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/security/ugm/user-group.zul</param>
+           </result>
+       </action>
+       <action name="ss" class="com.bsd.cse.struts2.action.security.SecurityAction" method="systemSetting">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10603</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10603</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/security/ss/setting.zul</param>
+           </result>
+       </action>
+       <action name="us" class="com.bsd.cse.struts2.action.security.SecurityAction" method="userSetting">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">107</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">107</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/security/us/setting.zul</param>
+           </result>
+       </action>
+
+    </package>
+    
+</struts>

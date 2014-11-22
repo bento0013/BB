@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt05_subreport3" pageWidth="785" pageHeight="555" orientation="Landscape" columnWidth="785" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.357947691000002"/>
+	<property name="ireport.x" value="865"/>
+	<property name="ireport.y" value="0"/>
+	<style name="font-info" fontName="Tahoma" fontSize="8" isPdfEmbedded="true"/>
+	<style name="font-center" style="font-info" hAlign="Center" vAlign="Middle">
+		<box>
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="vanila-font-center" style="font-info" mode="Opaque" backcolor="#FFFF99" hAlign="Center" vAlign="Middle" pattern="###0.000;-###0.000">
+		<box>
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<field name="name" class="java.lang.String"/>
+	<field name="value" class="java.math.BigDecimal[]"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="11" splitType="Stretch">
+			<textField>
+				<reportElement style="vanila-font-center" x="0" y="0" width="17" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="17" y="0" width="25" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[0]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="42" y="0" width="25" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[1]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="67" y="0" width="25" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[2]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="92" y="0" width="25" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[3]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="117" y="0" width="25" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[4]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="142" y="0" width="25" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[5]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="167" y="0" width="25" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[6]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="192" y="0" width="25" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[7]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="217" y="0" width="25" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[8]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="242" y="0" width="25" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[9]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="267" y="0" width="25" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[10]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="292" y="0" width="25" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[11]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="317" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[12]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="343" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[13]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="369" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[14]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="395" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[15]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="421" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[16]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="447" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[17]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="473" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[18]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="499" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[19]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="525" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[20]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="551" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[21]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="577" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[22]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="603" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[23]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="629" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[24]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="655" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[25]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="681" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[26]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="707" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[27]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="733" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[28]]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="vanila-font-center" x="759" y="0" width="26" height="11"/>
+				<textElement>
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value}[29]]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

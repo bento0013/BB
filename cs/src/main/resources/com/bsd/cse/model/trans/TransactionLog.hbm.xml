@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--[$Id: Group.hbm.xml,v 1.4 2011/02/25 13:04:23 thanasit Exp $]-->
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bsd.cse.model.trans">
+    <class name="TransactionLog" table="CS_TRANSACTION_LOG" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="LOG_ID" type="long">
+            <generator class="sequence">
+                <param name="sequence">transaction_log_seq</param>
+            </generator>
+        </id>
+        <property name="functionId"  column="FUNCTION_ID" not-null="true"/>
+        <property name="createdby"  column="USER_ID" not-null="true"/>
+        <property name="createdDate" column="CREATED_DATE" not-null="true"/>
+    </class>
+</hibernate-mapping>

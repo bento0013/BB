@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--[$Id: Group.hbm.xml,v 1.4 2011/02/25 13:04:23 thanasit Exp $]-->
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bsd.cse.model.input">
+    <class name="ProductLine" table="CS_PRODUCT_LINE" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="PRODUCT_LINE_ID" type="long">
+            <generator class="sequence">
+                <param name="sequence">product_line_seq</param>
+            </generator>
+        </id>        
+        <many-to-one name="part" class="com.bsd.cse.model.backoffice.part.Part" column="PART_ID" not-null="true"/>
+        <many-to-one name="process" class="com.bsd.cse.model.backoffice.part.Process" column="PROCESS_ID" not-null="true"/>
+        <!--many-to-one name="ngReason" class="com.bsd.cse.model.backoffice.part.NgReason" column="NG_REASON_ID" not-null="true"/-->
+        <many-to-one name="time" class="com.bsd.cse.model.input.Time" column="TIME_ID" not-null="true"/>
+        <many-to-one name="user" class="com.bsd.cse.model.security.User" column="USER_ID" not-null="true"/>
+        <property name="bp" column="BEFORE_PROCESS" not-null="true"/>
+        <property name="requestDate" column="REQUEST_DATE" not-null="true"/>
+        <property name="ok" column="OK_PROCESS" not-null="true"/>
+        <property name="ng" column="NOGOOD_PROCESS" not-null="false" />        
+        <property name="wp" column="WORKING_PROCESS" not-null="true"/>
+        <many-to-one name="machine" class="com.bsd.cse.model.backoffice.machine.Machine" column="MACHINE_ID"  not-null="true"/>        
+        <property name="createdDate" column="CREATED_DATE" />
+        <many-to-one class="com.bsd.cse.model.security.UserInfo" name="createdBy" column="CREATED_BY" />
+        <property name="updatedDate" column="UPDATED_DATE" />
+        <many-to-one class="com.bsd.cse.model.security.UserInfo" name="updatedBy" column="UPDATED_BY" />
+        
+    </class>
+</hibernate-mapping>

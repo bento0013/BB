@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--[$Id: Group.hbm.xml,v 1.4 2011/02/25 13:04:23 thanasit Exp $]-->
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bsd.cse.model.input">
+    <class name="Time" table="CS_TIME" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="TIME_ID" type="long">
+            <generator class="assigned">
+            </generator>
+        </id>
+        <property name="round" column="ROUND" not-null="true"/>
+        <property name="beginTime" column="BEGIN_TIME" not-null="true"/>
+        <property name="endTime" column="END_TIME" not-null="true"/>
+        <property name="createdDate" column="CREATED_DATE" />
+        <many-to-one class="com.bsd.cse.model.security.UserInfo" name="createdBy" column="CREATED_BY" />
+        <property name="updatedDate" column="UPDATED_DATE" />
+        <many-to-one class="com.bsd.cse.model.security.UserInfo" name="updatedBy" column="UPDATED_BY" />
+        
+    </class>
+</hibernate-mapping>

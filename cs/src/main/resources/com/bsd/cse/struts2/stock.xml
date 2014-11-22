@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>    
+    
+    <package name="stock" extends="secure" namespace="/secure/stock">
+       <action name="fg-incoming" class="com.bsd.cse.struts2.action.stock.StockAction" method="fgIncoming">
+           <interceptor-ref name="securityStack" />           
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10301,1030101,1030102</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10301</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/stock/fg/incoming.zul</param>
+           </result>
+       </action>
+
+       <action name="fg-outgoing" class="com.bsd.cse.struts2.action.stock.StockAction" method="fgOutgoing">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10302,1030201,1030202</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10302</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/stock/fg/outgoing.zul</param>
+           </result>
+       </action>
+       
+       <action name="raw-incoming" class="com.bsd.cse.struts2.action.stock.StockAction" method="rawIncoming">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10303,1030301,1030302</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10303</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/stock/rawmaterial/incoming.zul</param>
+           </result>
+       </action>
+
+       <action name="raw-outgoing" class="com.bsd.cse.struts2.action.stock.StockAction" method="rawOutgoing">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10304,1030401,1030402</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10304</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/stock/rawmaterial/outgoing.zul</param>
+           </result>
+       </action>
+
+       <action name="semi-incoming" class="com.bsd.cse.struts2.action.stock.StockAction" method="semiIncoming">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10305,1030501,1030502</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10305</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/stock/semimaterial/incoming.zul</param>
+           </result>
+       </action>
+
+       <action name="semi-outgoing" class="com.bsd.cse.struts2.action.stock.StockAction" method="semiOutgoing">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10306,1030601,1030602</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10306</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/stock/semimaterial/outgoing.zul</param>
+           </result>
+       </action>
+
+       
+       
+       
+    </package>
+    
+</struts>

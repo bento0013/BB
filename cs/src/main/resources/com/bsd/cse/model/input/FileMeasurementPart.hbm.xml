@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--[$Id: Group.hbm.xml,v 1.4 2011/02/25 13:04:23 thanasit Exp $]-->
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bsd.cse.model.input">
+    <class name="FileMeasurementPart" table="CS_FILE_MEASUREMENT_PART" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="FILE_MEASUREMENT_PART_ID" type="long">
+            <generator class="sequence">
+                <param name="sequence">file_measurement_part_seq</param>
+            </generator>
+        </id>
+        <property name="measurementDate" column="MEASUREMENT_DATE"/>
+        <many-to-one name="part" class="com.bsd.cse.model.backoffice.part.Part" column="PART_ID" not-null="true"/>
+        <many-to-one name="process" class="com.bsd.cse.model.backoffice.part.Process" column="PROCESS_ID" not-null="true"/>                
+        <many-to-one name="machine" class="com.bsd.cse.model.backoffice.machine.Machine" column="MACHINE_ID"  not-null="true"/>        
+        <property name="filename" column="FILENAME"/>
+        <property name="createdDate" column="CREATED_DATE" />
+        <many-to-one class="com.bsd.cse.model.security.UserInfo" name="createdBy" column="CREATED_BY" />
+        <property name="updatedDate" column="UPDATED_DATE" />
+        <many-to-one class="com.bsd.cse.model.security.UserInfo" name="updatedBy" column="UPDATED_BY" />
+        
+    </class>
+</hibernate-mapping>

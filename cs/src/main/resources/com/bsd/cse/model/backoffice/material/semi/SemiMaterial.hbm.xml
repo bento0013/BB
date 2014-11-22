@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--[$Id: Group.hbm.xml,v 1.4 2011/02/25 13:04:23 thanasit Exp $]-->
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bsd.cse.model.backoffice.material.semi">
+    <class name="SemiMaterial" table="CS_SEMI_MATERIAL" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="ID" type="long">
+            <generator class="sequence">
+                <param name="sequence">semi_material_seq</param>
+            </generator>
+        </id>
+        <property name="semiName" column="SEMI_NAME" not-null="true"/>
+        <many-to-one name="semiType" class="SemiType" column="type_id"/>        
+        <property name="amount" column="AMOUNT" not-null="false"/>
+        <property name="size" column="SIZE" not-null="false"/>
+        <property name="minimumStock" column="MINIMUM_STOCK" not-null="false"/>
+        <property name="length" column="S_LENGTH" not-null="false"/>
+        <many-to-one name="rawMaterial" class="com.bsd.cse.model.backoffice.material.raw.RawMaterial" column="raw_material_id" not-null="false"/>
+        <property name="createdDate" column="CREATED_DATE" />
+        <many-to-one class="com.bsd.cse.model.security.UserInfo" name="createdBy" column="CREATED_BY" />
+        <property name="updatedDate" column="UPDATED_DATE" />
+        <many-to-one class="com.bsd.cse.model.security.UserInfo" name="updatedBy" column="UPDATED_BY" />
+
+        
+    </class>
+</hibernate-mapping>

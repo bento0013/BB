@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>    
+    
+    <package name="backoffice" extends="secure" namespace="/secure/backoffice">
+       <action name="department" class="com.bsd.cse.struts2.action.backoffice.BackOfficeAction" method="department">
+           <interceptor-ref name="securityStack" />           
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10501</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10501</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/backoffice/department/department.zul</param>
+           </result>
+       </action>
+       <action name="part" class="com.bsd.cse.struts2.action.backoffice.BackOfficeAction" method="part">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">1050201</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">1050201</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/backoffice/part/part.zul</param>
+           </result>
+       </action>
+
+       <action name="ngreason" class="com.bsd.cse.struts2.action.backoffice.BackOfficeAction" method="ngreason">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">1050202</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">1050202</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/backoffice/part/ngreason.zul</param>
+           </result>
+       </action>
+
+       <action name="part-process" class="com.bsd.cse.struts2.action.backoffice.BackOfficeAction" method="partProcess">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">1050203</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">1050203</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/backoffice/part-process/part-process.zul</param>
+           </result>
+       </action>
+
+       <action name="machine" class="com.bsd.cse.struts2.action.backoffice.BackOfficeAction" method="machine">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">1050301</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">1050301</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/backoffice/machine/mechine/machine.zul</param>
+           </result>
+       </action>
+
+       <action name="machine-model" class="com.bsd.cse.struts2.action.backoffice.BackOfficeAction" method="machineModel">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">1050302</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">1050302</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/backoffice/machine/model/model.zul</param>
+           </result>
+       </action>
+
+       <action name="machine-model-type" class="com.bsd.cse.struts2.action.backoffice.BackOfficeAction" method="machineModelType">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">1050303</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">1050303</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/backoffice/machine/type/type.zul</param>
+           </result>
+       </action>            
+       
+       <action name="measurement-tool" class="com.bsd.cse.struts2.action.backoffice.BackOfficeAction" method="measurementTool">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">1050401</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">1050401</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/backoffice/measurement-tools/measurement/measurement.zul</param>
+           </result>
+       </action>
+
+       <action name="measurement-tool-model" class="com.bsd.cse.struts2.action.backoffice.BackOfficeAction" method="measurementToolModel">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">1050402</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">1050402</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/backoffice/measurement-tools/model/model.zul</param>
+           </result>
+       </action>
+
+       <action name="measurement-tool-type" class="com.bsd.cse.struts2.action.backoffice.BackOfficeAction" method="measurementToolType">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">1050403</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">1050403</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/backoffice/measurement-tools/type/type.zul</param>
+           </result>
+       </action>
+
+       <action name="raw-material" class="com.bsd.cse.struts2.action.backoffice.BackOfficeAction" method="rawMaterial">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">1050501</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">1050501</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/backoffice/raw-material/material/material.zul</param>
+           </result>
+       </action>
+
+       <action name="raw-material-type" class="com.bsd.cse.struts2.action.backoffice.BackOfficeAction" method="rawMaterialType">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">1050502</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">1050502</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/backoffice/raw-material/type/type.zul</param>
+           </result>
+       </action>
+
+       <action name="semi-material" class="com.bsd.cse.struts2.action.backoffice.BackOfficeAction" method="semiMaterial">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">1050601</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">1050601</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/backoffice/semi-material/material/material.zul</param>
+           </result>
+       </action>
+       
+       <action name="semi-material-type" class="com.bsd.cse.struts2.action.backoffice.BackOfficeAction" method="semiMaterialType">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">1050602</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">1050602</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/backoffice/semi-material/type/type.zul</param>
+           </result>
+       </action>
+
+       <action name="checkpoint" class="com.bsd.cse.struts2.action.backoffice.BackOfficeAction" method="checkpoint">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10507</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10507</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/backoffice/checkpoint/checkpoint.zul</param>
+           </result>
+       </action>
+
+       <action name="customer" class="com.bsd.cse.struts2.action.backoffice.BackOfficeAction" method="customer">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10508</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10508</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/backoffice/customer-data/customer-data.zul</param>
+           </result>
+       </action>
+       
+    </package>
+    
+</struts>

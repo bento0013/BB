@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>    
+    
+    <package name="input" extends="secure" namespace="/secure/input">
+       <action name="input-part" class="com.bsd.cse.struts2.action.input.InputAction" method="inputPart">
+           <interceptor-ref name="securityStack" />           
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10201,1020101,1020102,1020103,1020104</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10201</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/input/input-part.zul</param>
+           </result>
+       </action>
+
+       <action name="input-time" class="com.bsd.cse.struts2.action.input.InputAction" method="inputTime">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10203,1020301,1020302,1020303,1020304</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10203</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/input/input-time.zul</param>
+           </result>
+       </action>
+
+       <action name="input-measurement" class="com.bsd.cse.struts2.action.input.InputAction" method="inputMeasurement">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10202,1020201,1020202,1020203,1020204</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10202</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/input/input-measurement.zul</param>
+           </result>
+       </action>
+
+       <action name="file-measurement" class="com.bsd.cse.struts2.action.input.FileMeasurememtPartReportAction" method="report">
+            <interceptor-ref name="securityStack" />            
+            <result type="stream" name="pdf">
+                <param name="contentDisposition">attachment;filename="${filename}"</param>
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">reportStream</param>
+                <param name="bufferSize">4096</param>
+            </result>
+            <result type="dispatcher" name="reporterror">
+                <param name="location">/WEB-INF/layouts/defaults/error.zul</param>
+            </result>
+        </action>  
+       
+       
+    </package>
+    
+</struts>

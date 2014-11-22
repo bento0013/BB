@@ -1,0 +1,231 @@
+/* 
+    Document   : theme
+    Created on : May 26, 2011, 12:11:41 AM
+    Author     : bento
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+body
+{
+    padding:0px;
+    color:#000000;
+    font-family: Tahoma;
+
+}
+
+.font_normal_bold
+{
+    color:#000000;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.font_normal
+{
+    color:#000000;
+    font-size:11px;
+}
+
+.font_login_label_bold
+{
+    color:#000000;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.font_bold_red
+{
+    color:red;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.font_login_label
+{
+    color:#000000;
+    font-size:14px;
+}
+
+.header_content
+{    
+    font-size: 14px;
+    font-weight:bold;
+    padding-top:10px;
+    padding-left:5px
+
+}
+
+.content
+{
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom:5px;
+}
+
+.content_large
+{
+    font-size: 20px;
+    font-weight:bold;
+}
+
+.login-bg-layout
+{
+    /*background:transparent repeat-x 0 0px;background-image:url(../../images/login/right.png);*/
+    font-family: Tahoma,Arial,sans-serif;color:black;
+    background-color:#edeeee;
+    background-image: url(../images/login/login2.png);
+    background-position:right top;
+    background-repeat: no-repeat;
+    margin: 0px 0px 0px 0px;
+    padding: 50px 0px 0px 0px;
+    font-size: 12px;
+    height: 100%;
+    width: 100%;
+}
+
+.login-button
+{
+    padding:0px;
+     background:transparent repeat-x 0 0px;background-image:url(../images/login/login_btn.png);
+    border:0;
+}
+
+.button_login
+{
+    background: none;
+    border:0px;
+}
+
+.login_img
+ {
+	background-image: url(../images/login/login1.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 349px;
+	width: 501px;
+        padding-left:122px;
+        padding-top:75px;        
+}
+
+.login-page-bg
+{
+	background-image: url(../images/login/login-bg02.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 349px;
+	width: 501px;
+}
+
+.body_login_img {
+	background-image: url(../images/login/login-bg02.png);
+	background-repeat: no-repeat;
+	height: 188px;
+	width: 595px;
+}
+
+.header_login_img {
+	background-image: url(../images/login/login-bg01.png);
+	background-repeat: no-repeat;
+	height: 160px;
+	width: 595px;
+}
+
+.footer_login_img {
+	background-image: url(../images/login/login-bg03.png);
+	background-repeat: no-repeat;
+	height: 188px;
+	width: 595px;
+}
+
+.footer{
+	background-image: url(../images/template/footer_bg.png);
+	background-repeat: repeat-x;	
+	text-align:center;
+}
+
+.header{
+	background-image: url(../images/template/header_bg.png);
+        background-repeat: repeat-x;
+	text-align:center;
+}
+
+.header-left{
+	background-image: url(../images/template/header01.png);	
+	height: 50px;
+	text-align:center;
+}
+
+.header-right{
+	background-image: url(../images/template/header02.png);
+	height: 50px;
+	text-align:center;
+}
+
+.menu_bg
+{
+    background-image: url(../images/template/mune_bar_bg.png);
+    background-repeat: repeat-x;
+}
+
+.background_title_content
+{
+    background-image: url(../images/template/content_bg.png);
+    background-repeat: repeat-x;
+}
+
+.title_content
+{
+    border-bottom:3px solid #001D86;margin-bottom:5px;
+}
+
+.font_link
+{
+    font-size:14px;
+    font-weight:bold;
+}
+
+
+/*
+
+*/
+
+.z-menu-inner-m .z-menu-btn {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; FONT-WEIGHT: bold;  PADDING-BOTTOM: 2px; MARGIN: 0px; OUTLINE-STYLE: none; MIN-HEIGHT: 13px; PADDING-LEFT: 2px; OUTLINE-WIDTH: 0px; WIDTH: auto; PADDING-RIGHT: 1px; BACKGROUND: no-repeat 0px 2px; OVERFLOW: visible; BORDER-TOP: 0px; CURSOR: pointer; BORDER-RIGHT: 0px; TEXT-DECORATION: none; PADDING-TOP: 3px
+}
+.z-menu-item-inner-m .z-menu-item-btn {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; FONT-WEIGHT: bold; PADDING-BOTTOM: 2px; MARGIN: 0px; OUTLINE-STYLE: none; MIN-HEIGHT: 13px; PADDING-LEFT: 2px; OUTLINE-WIDTH: 0px; WIDTH: auto; PADDING-RIGHT: 1px; BACKGROUND: no-repeat 0px 2px; OVERFLOW: visible; BORDER-TOP: 0px; CURSOR: pointer; BORDER-RIGHT: 0px; TEXT-DECORATION: none; PADDING-TOP: 3px
+}
+
+.z-menu-popup-cnt .z-menu .z-menu-cnt-img {
+}
+.z-menu-popup-cnt .z-menu-item-cnt-ck .z-menu-item-img {
+}
+.z-menu-popup-cnt .z-menu-item-cnt-unck .z-menu-item-img {
+}
+
+.z-msgbox-success
+{
+    background-image: url(../images/msg/success.png);
+}
+
+.z-msgbox-fail
+{
+    background-image: url(../images/msg/fail.png);
+}
+
+.z-textbox-disd, .z-textbox-disd *, .z-decimalbox-disd, .z-decimalbox-disd *, .z-intbox-disd, .z-intbox-disd *, .z-longbox-disd, .z-longbox-disd *, .z-doublebox-disd, .z-doublebox-disd * {
+    color: #303030!important;
+    cursor: default!important;
+}
+
+

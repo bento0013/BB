@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <hbox hflex="1" height="30px"  sclass="footer" align="center">
+        <label value="${c:l('footer.page.label')}"/>
+    </hbox>
+</zk>

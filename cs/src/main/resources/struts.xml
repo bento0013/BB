@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- NOTE: json-default also extends struts-default -->
+
+
+    <constant name="struts.devMode" value="true" />
+    <package name="base" extends="struts-default">
+
+        <!--result-types>
+            <result-type name="tiles" default="true" class="org.apache.struts2.views.tiles.TilesResult"/>           
+        </result-types-->
+        <interceptors>
+            <interceptor name="authorization" class="com.bsd.cse.struts2.interceptor.AuthorizationInterceptor" />
+            <interceptor name="menulog" class="com.bsd.cse.struts2.interceptor.MenuLogsInterceptor" />
+            <interceptor name="disabled" class="com.bsd.cse.struts2.interceptor.DisabledUserInterceptor" />
+            <interceptor name="locale" class="com.bsd.cse.struts2.interceptor.LocaleInterceptor" />
+            <!--interceptor name="sessionTracking" class="com.arg.cbs.struts2.security.SessionTrackingInterceptor" />
+            <interceptor name="sessionLogs" class="com.arg.cbs.struts2.security.SessionLogsInterceptor" />
+            <interceptor name="location" class="com.arg.cbs.struts2.security.LocationInterceptor" />
+            
+            <interceptor name="menuLogs" class="com.arg.cbs.struts2.security.MenuLogsInterceptor" />
+            <interceptor name="disclaimer" class="com.arg.cbs.struts2.security.DisclaimerInterceptor" />            
+            <interceptor name="appLevel" class="com.arg.arm.struts2.security.ApplicationLevelInterceptor" />
+            <interceptor name="userLevel" class="com.arg.arm.struts2.security.UserLevelInterceptor" />
+            <interceptor name="auditTrail" class="com.arg.arm.struts2.security.AuditTrailInterceptor" />
+            <interceptor name="expirePassword" class="com.arg.arm.struts2.security.ExpirePasswordInterceptor" />
+            <interceptor name="disagree" class="com.arg.arm.struts2.security.DisagreeInterceptor" />
+            <interceptor name="disagreeBulk" class="com.arg.arm.struts2.security.DisagreeBulkProcessInterceptor" /-->
+        </interceptors>
+
+        <default-interceptor-ref name="defaultStack" />
+
+        <global-results>
+            <result type="dispatcher" name="no-permission">
+                <param name="location">/WEB-INF/layouts/default/main/permission.zul</param>
+            </result>
+             <result name="login">/login/login.zul</result>
+             <result type="redirectAction" name="disabled">
+                <param name="namespace">/public</param>
+                <param name="actionName">disabled</param>
+             </result>
+            <!--result type="dispatcher" name="disabled">
+                <param name="location">/loginerror.zul</param>
+            </result-->
+            <!--result type="dispatcher" name="login">
+                <param name="location">/WEB-INF/layouts/defaults/main/login.zul</param>
+            </result>
+            <result type="dispatcher" name="logout">
+                <param name="location">/WEB-INF/layouts/defaults/main/logout.jsp</param>
+            </result>
+            <result type="dispatcher" name="forbidden">
+                <param name="location">/WEB-INF/layouts/defaults/main/forbidden.zul</param>
+            </result>
+            
+            <result type="dispatcher" name="exceedMaxUserSessions">
+                <param name="location">/WEB-INF/layouts/defaults/main/maxusersession.zul</param>
+            </result>
+            <result type="dispatcher" name="disableUser">
+                <param name="location">/WEB-INF/layouts/defaults/main/disabled.zul</param>
+            </result>
+            <result type="dispatcher" name="deleteUser">
+                <param name="location">/WEB-INF/layouts/defaults/main/deleted.zul</param>
+            </result>
+            <result type="dispatcher" name="nonAccessTime">
+                <param name="location">/WEB-INF/layouts/defaults/main/nonaccesstime.zul</param>
+            </result>                                            
+            <result type="tiles" name="reporterror">main.admrpt.error</result>
+            <result type="redirectAction" name="none">
+                <param name="namespace">/secure</param>
+                <param name="actionName">home</param>
+            </result>
+            <result type="redirectAction" name="disclaimer">
+                <param name="namespace">/secure/authen</param>
+                <param name="actionName">disclaimer</param>
+            </result>
+
+            <result type="redirectAction" name="password-expired">
+                <param name="namespace">/secure/authen</param>
+                <param name="actionName">expiredpassword</param>
+            </result>
+
+            <result type="redirectAction" name="change-password-first-logon">
+                <param name="namespace">/secure/authen</param>
+                <param name="actionName">changepwdfirstlogon</param>
+            </result-->
+            
+        </global-results>
+
+    </package>    
+
+    <package name="public" extends="base" namespace="/public">
+
+        <action name="prelogin" class="com.bsd.cse.struts2.action.MainAction" method="prelogin">
+            <result type="redirectAction" name="success">
+                <param name="namespace">/secure</param>
+                <param name="actionName">home</param>
+            </result>
+        </action>
+
+        <action name="home" class="com.bsd.cse.struts2.action.MainAction" method="home">
+            <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/main/home.zul</param>
+            </result>
+        </action>
+
+        <!--action name="resultzul" class="com.bsd.cse.struts2.action.MainAction" method="zul1">
+            <result type="dispatcher" name="success">
+                <param name="location">/result.zul</param>
+            </result>
+        </action-->
+
+        <!--action name="menu" class="com.arg.cbs.struts2.action.MenuAction" method="get">
+            <result type="json">
+                <param name="root">message.data</param>
+                <param name="wrapWithComments">false</param>
+                <param name="noCache">true</param>
+                <param name="enableGZIP">true</param>
+                <param name="ignoreHierarchy">false</param>
+            </result>
+        </action-->
+
+        <!--action name="ping" class="com.arg.arm.struts2.action.EmptyAction" method="ping">
+            <result type="json">
+                <param name="wrapWithComments">false</param>
+                <param name="noCache">true</param>
+                <param name="enableGZIP">true</param>
+                <param name="ignoreHierarchy">false</param>
+            </result>
+        </action-->
+
+        <!--action name="prelogin" class="com.arg.cbs.struts2.action.MainAction" method="prelogin">
+            <result type="redirectAction">
+                <param name="namespace">/secure</param>
+                <param name="actionName">home</param>
+            </result>
+        </action-->
+
+        <action name="logout" class="com.bsd.cse.struts2.action.MainAction" method="logout">
+            <result type="redirectAction" name="success">
+                <param name="namespace">/secure</param>
+                <param name="actionName">home</param>
+            </result>
+        </action>
+        <action name="disabled" class="com.bsd.cse.struts2.action.MainAction" method="disabled">
+             <result type="dispatcher" name="success">
+                <param name="location">/loginerror.zul</param>
+            </result>
+            <result type="redirectAction" name="login">
+                 <param name="namespace">/secure</param>
+                <param name="actionName">home</param>
+            </result>
+        </action>
+
+        <!--action name="loginerror" class="com.arg.cbs.struts2.action.LoginFailAction" method="loginerror">
+            <result type="tiles" name="success">main.authen.loginerror</result>
+        </action-->
+
+        <!--action name="contactncbnomenu" class="com.arg.cbs.struts2.action.MainAction" method="contactNcb">
+            <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/defaults/contactncb_nomenu.zul</param>
+            </result>
+        </action>
+
+        <action name="helpnomenu" class="com.arg.cbs.struts2.action.HelpAction" method="index">
+            <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/defaults/help_nomenu.zul</param>
+            </result>
+        </action-->
+
+    </package>
+
+    <package name="secure" extends="base" namespace="/secure">
+
+
+        <interceptors>
+            <interceptor-stack name="securityStack">
+                <interceptor-ref name="defaultStack" />
+                <interceptor-ref name="disabled" />
+                <interceptor-ref name="authorization" />
+                <interceptor-ref name="menulog" />
+                <interceptor-ref name="locale" />                
+            </interceptor-stack>
+        </interceptors>            
+        
+
+        <default-interceptor-ref name="securityStack" />
+
+              
+        <action name="home" class="com.bsd.cse.struts2.action.MainAction" method="index">
+            <interceptor-ref name="securityStack" />
+            <result type="dispatcher">
+                <param name="location">/WEB-INF/layouts/default/main/home.zul</param>
+            </result>
+        </action>
+
+        <action name="nopermission" class="com.bsd.cse.struts2.action.MainAction" method="permission">
+            <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/main/permission.zul</param>
+            </result>
+        </action>             
+
+    </package> 
+
+    <include file="/com/bsd/cse/struts2/security.xml" />
+    <include file="/com/bsd/cse/struts2/backoffice.xml" />
+    <include file="/com/bsd/cse/struts2/input.xml" />
+    <include file="/com/bsd/cse/struts2/stock.xml" />
+    <include file="/com/bsd/cse/struts2/report.xml" />
+    <!--include file="/com/arg/cbs/struts2/vap-struts.xml" />
+    <include file="/com/arg/cbs/struts2/admin-report-struts.xml" />
+    <include file="/com/arg/cbs/struts2/user-group-struts.xml" />
+    <include file="/com/arg/cbs/struts2/user-setting-struts.xml" />
+    <include file="/com/arg/cbs/struts2/onlinemaintenance-managecompany.xml" />
+    <include file="/com/arg/cbs/struts2/onlinemaintenanceunload.xml" />
+    <include file="/com/arg/cbs/struts2/onlinemaintenancedispute.xml" />
+    <include file="/com/arg/cbs/struts2/onlinemaintenanceviewcompany.xml" />
+    <include file="/com/arg/cbs/struts2/onlinemaintenancebatch.xml" />
+    <include file="/com/arg/cbs/struts2/onlinemaintenanceupdate.xml" />
+    <include file="/com/arg/cbs/struts2/search-online-struts.xml" />
+    <include file="/com/arg/cbs/struts2/search-batch-struts.xml" /-->
+    
+
+</struts>

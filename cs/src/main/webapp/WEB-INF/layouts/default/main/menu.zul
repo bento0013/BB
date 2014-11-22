@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+        <window  border="0" apply="com.bsd.cse.zk.ctrl.menu.MenuController" sclass="menu_bg" height="30px">
+            <menubar  id="menubar"  autodrop="true" ></menubar>
+        </window>
+</zk>

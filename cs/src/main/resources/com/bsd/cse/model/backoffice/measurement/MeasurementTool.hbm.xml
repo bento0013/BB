@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--[$Id: Group.hbm.xml,v 1.4 2011/02/25 13:04:23 thanasit Exp $]-->
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bsd.cse.model.backoffice.measurement">
+    <class name="MeasurementTool" table="CS_MEASUREMENT_TOOL" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="ID" type="long">
+            <generator class="sequence">
+                <param name="sequence">measurement_tool_seq</param>
+            </generator>
+        </id>
+        <property name="brand" column="BRAND" not-null="false"/>
+        <property name="resolution" column="RESOLUTION" not-null="false"/>
+        <property name="incomingDate" column="INCOMING_DATE" not-null="false"/>
+        <property name="customerDetail" column="CUSTOMER_DETAIL" not-null="false"/>
+        <property name="description" column="DESCRIPTION" not-null="false"/>        
+        <property name="serialNo" column="SERIAL_NO" not-null="true"/>
+        <many-to-one name="model" class="MeasurementToolModel" column="model_id"/>
+        <property name="codeNo" column="CODE_NO" not-null="true"/>
+        <property name="createdDate" column="CREATED_DATE" />
+        <many-to-one class="com.bsd.cse.model.security.UserInfo" name="createdBy" column="CREATED_BY" />
+        <property name="updatedDate" column="UPDATED_DATE" />
+        <many-to-one class="com.bsd.cse.model.security.UserInfo" name="updatedBy" column="UPDATED_BY" />
+        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt01" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="font-info" fontName="Tahoma" fontSize="10" isPdfEmbedded="true"/>
+	<style name="Header" style="font-info" hAlign="Center" fontSize="16" isBold="true"/>
+	<style name="Column Header" style="font-info" hAlign="Center" vAlign="Middle" fontSize="11" isBold="true">
+		<box>
+			<pen lineWidth="0.75" lineColor="#999999"/>
+			<topPen lineWidth="0.75" lineColor="#999999"/>
+			<leftPen lineWidth="0.75" lineColor="#999999"/>
+			<bottomPen lineWidth="0.75" lineColor="#999999"/>
+			<rightPen lineWidth="0.75" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="Detail Value Str" style="font-info" hAlign="Left" vAlign="Middle" fontSize="11" isBold="false">
+		<box leftPadding="3" rightPadding="3">
+			<pen lineWidth="0.75" lineColor="#999999"/>
+			<topPen lineWidth="0.75" lineColor="#999999"/>
+			<leftPen lineWidth="0.75" lineColor="#999999"/>
+			<bottomPen lineWidth="0.75" lineColor="#999999"/>
+			<rightPen lineWidth="0.75" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="Detail Value Date" style="font-info" hAlign="Center" vAlign="Middle" fontSize="11" isBold="false">
+		<box leftPadding="3" rightPadding="3">
+			<pen lineWidth="0.75" lineColor="#999999"/>
+			<topPen lineWidth="0.75" lineColor="#999999"/>
+			<leftPen lineWidth="0.75" lineColor="#999999"/>
+			<bottomPen lineWidth="0.75" lineColor="#999999"/>
+			<rightPen lineWidth="0.75" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="Detail Value Number" style="font-info" hAlign="Right" vAlign="Middle" pattern="#,##0" fontSize="10" isBold="false">
+		<box leftPadding="3" rightPadding="3">
+			<pen lineWidth="0.75" lineColor="#999999"/>
+			<topPen lineWidth="0.75" lineColor="#999999"/>
+			<leftPen lineWidth="0.75" lineColor="#999999"/>
+			<bottomPen lineWidth="0.75" lineColor="#999999"/>
+			<rightPen lineWidth="0.75" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="Detail Header Column" style="font-info" hAlign="Left" vAlign="Middle" isBold="true">
+		<box leftPadding="3" rightPadding="3"/>
+	</style>
+	<style name="Detail Header Value" style="font-info" hAlign="Left" vAlign="Middle">
+		<box leftPadding="3" rightPadding="3"/>
+	</style>
+	<style name="paging" style="font-info" vAlign="Middle"/>
+	<style name="Detail Value Center" style="font-info" hAlign="Center" vAlign="Middle" fontSize="10" isBold="false">
+		<box leftPadding="3" rightPadding="3">
+			<pen lineWidth="0.75" lineColor="#999999"/>
+			<topPen lineWidth="0.0" lineColor="#999999"/>
+			<leftPen lineWidth="0.75" lineColor="#999999"/>
+			<bottomPen lineWidth="0.75" lineColor="#999999"/>
+			<rightPen lineWidth="0.75" lineColor="#999999"/>
+		</box>
+	</style>
+	<parameter name="startDate" class="java.lang.String">
+		<defaultValueExpression><![CDATA["'2011-11-01'"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="endDate" class="java.lang.String">
+		<defaultValueExpression><![CDATA["'2011-12-01'"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="requestDate" class="java.lang.String"/>
+	<parameter name="requestBy" class="java.lang.String"/>
+	<parameter name="period" class="java.lang.String"/>
+	<parameter name="sqlMain" class="java.lang.String"/>
+	<parameter name="CS_IMAGE" class="java.lang.String"/>
+	<parameter name="titleStr" class="java.lang.String"/>
+	<parameter name="startDateStr" class="java.lang.String">
+		<defaultValueExpression><![CDATA["'2011-11-01'"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="endDateStr" class="java.lang.String">
+		<defaultValueExpression><![CDATA["'2011-12-01'"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[$P!{sqlMain}]]>
+	</queryString>
+	<field name="transfer_type_name" class="java.lang.String"/>
+	<field name="part_no" class="java.lang.String"/>
+	<field name="part_name" class="java.lang.String"/>
+	<field name="recorder" class="java.lang.String"/>
+	<field name="requester" class="java.lang.String"/>
+	<field name="created_date" class="java.sql.Timestamp"/>
+	<field name="quantity" class="java.lang.Long"/>
+	<field name="balance" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="111" splitType="Stretch">
+			<staticText>
+				<reportElement style="Detail Header Column" x="380" y="70" width="85" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Request Date :]]></text>
+			</staticText>
+			<textField pattern="">
+				<reportElement style="Detail Header Value" x="465" y="70" width="90" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{requestDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Detail Header Column" x="0" y="70" width="70" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Request By :]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail Header Value" x="70" y="70" width="152" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{requestBy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="font-info" x="0" y="90" width="555" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{startDateStr}+" ถีง "+$P{endDateStr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="paging" x="435" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="paging" x="515" y="0" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="0" width="340" height="48"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{CS_IMAGE}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement style="Header" x="0" y="49" width="555" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{titleStr}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column Header" x="248" y="0" width="58" height="20"/>
+				<textElement/>
+				<text><![CDATA[Action]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column Header" x="306" y="0" width="64" height="20"/>
+				<textElement/>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column Header" x="499" y="0" width="56" height="20"/>
+				<textElement/>
+				<text><![CDATA[Recorder]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column Header" x="41" y="0" width="114" height="20"/>
+				<textElement/>
+				<text><![CDATA[Transaction Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column Header" x="0" y="0" width="41" height="20"/>
+				<textElement/>
+				<text><![CDATA[No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column Header" x="434" y="0" width="65" height="20"/>
+				<textElement/>
+				<text><![CDATA[Requester]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column Header" x="370" y="0" width="64" height="20"/>
+				<textElement/>
+				<text><![CDATA[Balance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column Header" x="155" y="0" width="93" height="20"/>
+				<textElement/>
+				<text><![CDATA[Part No]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail Value Str" stretchType="RelativeToTallestObject" x="155" y="0" width="93" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{part_no}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement style="Detail Value Str" stretchType="RelativeToTallestObject" x="499" y="0" width="56" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{recorder}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail Value Str" stretchType="RelativeToTallestObject" x="434" y="0" width="65" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{requester}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail Value Number" stretchType="RelativeToTallestObject" x="306" y="0" width="64" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy HH:mm:ss">
+				<reportElement style="Detail Value Date" stretchType="RelativeToTallestObject" x="41" y="0" width="114" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{created_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail Value Str" stretchType="RelativeToTallestObject" x="248" y="0" width="58" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{transfer_type_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail Value Number" stretchType="RelativeToTallestObject" x="370" y="0" width="64" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{balance}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail Value Number" stretchType="RelativeToTallestObject" x="0" y="0" width="41" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<noData>
+		<band height="181">
+			<staticText>
+				<reportElement style="Detail Header Column" x="0" y="70" width="70" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Request By :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Detail Header Column" x="380" y="70" width="85" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Request Date :]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="340" height="48"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{CS_IMAGE}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement style="Detail Header Value" x="70" y="70" width="152" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{requestBy}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement style="Detail Header Value" x="465" y="70" width="90" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{requestDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="font-info" x="0" y="90" width="555" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Date :"+$P{startDateStr}+"-"+$P{endDateStr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Detail Value Center" x="0" y="138" width="555" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[No Record Found.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column Header" x="358" y="118" width="64" height="20"/>
+				<textElement/>
+				<text><![CDATA[Balance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column Header" x="422" y="118" width="68" height="20"/>
+				<textElement/>
+				<text><![CDATA[Requester]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column Header" x="236" y="118" width="58" height="20"/>
+				<textElement/>
+				<text><![CDATA[Action]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column Header" x="41" y="118" width="102" height="20"/>
+				<textElement/>
+				<text><![CDATA[Transaction Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column Header" x="0" y="118" width="41" height="20"/>
+				<textElement/>
+				<text><![CDATA[No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column Header" x="490" y="118" width="65" height="20"/>
+				<textElement/>
+				<text><![CDATA[Recorder]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column Header" x="143" y="118" width="93" height="20"/>
+				<textElement/>
+				<text><![CDATA[Part No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column Header" x="294" y="118" width="64" height="20"/>
+				<textElement/>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Header" x="0" y="49" width="555" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{titleStr}]]></textFieldExpression>
+			</textField>
+		</band>
+	</noData>
+</jasperReport>

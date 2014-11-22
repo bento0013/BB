@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--[$Id: Group.hbm.xml,v 1.4 2011/02/25 13:04:23 thanasit Exp $]-->
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bsd.cse.model.input">
+    <class name="MachineTime" table="CS_MACHINE_TIME" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="MACHINE_TIME_ID" type="long">
+            <generator class="sequence">
+                <param name="sequence">machine_time_seq</param>
+            </generator>
+        </id>
+        <many-to-one name="machine" class="com.bsd.cse.model.backoffice.machine.Machine" column="MACHINE_ID"  not-null="true"/>
+        <many-to-one name="process" class="com.bsd.cse.model.backoffice.part.Process" column="PROCESS_ID"  not-null="true"/>
+        <many-to-one name="part" class="com.bsd.cse.model.backoffice.part.Part" column="PART_ID"  not-null="true"/>
+        <property name="scheduleTime" column="SCHEDULE_TIME" not-null="true"/>
+        <property name="apTime" column="A_TIME" not-null="true"/>
+        <property name="bpTime" column="B_TIME" not-null="true"/>
+        <property name="cpTime" column="C_TIME" not-null="true"/>
+        <property name="dpTime" column="D_TIME" not-null="true"/>
+        <property name="epTime" column="E_TIME" not-null="true"/>
+        <property name="fp1Time" column="F1_TIME" not-null="true"/>
+        <property name="fp2Time" column="F2_TIME" not-null="true"/>
+        <property name="fp3Time" column="F3_TIME" not-null="true"/>
+        <property name="hpTime" column="H_TIME" not-null="true"/>
+        <property name="ipTime" column="I_TIME" not-null="true"/>
+        <property name="jpTime" column="J_TIME" not-null="true"/>
+        <property name="kp1Time" column="K1_TIME" not-null="true"/>
+        <property name="kp2Time" column="K2_TIME" not-null="true"/>
+        <property name="kp3Time" column="K3_TIME" not-null="true"/>
+        <property name="mpTime" column="M_TIME" not-null="true"/>
+        <property name="period" column="PERIOD" not-null="true"/>
+        
+        <property name="createdDate" column="CREATED_DATE" />
+        <many-to-one class="com.bsd.cse.model.security.UserInfo" name="createdBy" column="CREATED_BY" />
+        <property name="updatedDate" column="UPDATED_DATE" />
+        <many-to-one class="com.bsd.cse.model.security.UserInfo" name="updatedBy" column="UPDATED_BY" />
+        
+    </class>
+</hibernate-mapping>

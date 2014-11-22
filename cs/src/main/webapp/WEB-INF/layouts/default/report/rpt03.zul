@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/custom/core" prefix="c"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/WEB-INF/layouts/default/main/template.zul"?>
+<?page id="page" title="${c:l('default.page.global.label.app.title')} ${c:l('report03.page.label.report03')}" ?>
+<?link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="/images/favicon.ico"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <panel self="@{define(content)}" hflex="1" vflex="1" style="padding:0px;margin:0px" apply="com.bsd.cse.zk.ctrl.rpt.Report03Controller">
+       <panelchildren hflex="1">
+            <panel hflex="1">
+                <panelchildren hflex="1" sclass="background_title_content">
+                    <hbox height="30px" hflex="1" sclass="title_content"  align="center" pack="left">
+                        <label style="font-weight:bold;padding-top:10px;padding-left:5px" value="${c:l('report03.page.label.report03')}"></label>
+                    </hbox>
+                </panelchildren>
+            </panel>
+            <panel  vflex="1" >
+                <panelchildren  vflex="1" hflex="1">
+                    <h:form id="rptForm" action="report03.html" method="post" target="_blank" xmlns:h="http://www.w3.org/1999/xhtml">
+                        <vbox  vflex="1"  hflex="1" style="padding-bottom:5px" align="center">
+                            <hbox align="left" widths="100px,100px,100px" height="25px" >
+                                <hbox><label value="${c:l('report03.page.label.part')}"></label>
+                                    </hbox>
+                                <combobox id="partCbox" readonly="true" width="100px" ></combobox>
+                                <label></label>
+                            </hbox>
+                            <hbox align="left" widths="100px,100px,100px" height="25px" >
+                                <hbox><label value="${c:l('report03.page.label.process')}"></label>
+                                    </hbox>
+                                <combobox id="processCbox" readonly="true" width="100px" ></combobox>
+                                <label></label>
+                            </hbox>
+                            <hbox align="left" widths="100px,100px,100px" height="25px" >
+                                <hbox><label value="${c:l('report03.page.label.checkpoint')}"></label>
+                                    </hbox>
+                                <combobox id="checkpointCbox" readonly="true" width="100px" ></combobox>
+                                <label></label>
+                            </hbox>
+                            <hbox align="left" widths="100px,100px,100px" height="25px" >
+                                <hbox><label value="${c:l('report03.page.label.startdate')}"></label>
+                                    </hbox>
+                                <datebox id="startDatebox" readonly="true" format="dd/MM/yyyy" width="100px" constraint="no future,no empty"></datebox>
+                                <label></label>
+                            </hbox>                            
+                            <hbox align="left" widths="100px,100px,100px" height="20px"   >
+                                <hbox><label value="${c:l('report03.page.label.enddate')}"></label>
+                                    </hbox>
+                                <datebox id="endDatebox" readonly="true" format="dd/MM/yyyy" width="100px" constraint="no future,no empty"></datebox>
+                                <button id="searchBtn" mold="trendy" image="/images/report/search.png" tooltiptext="${c:l('report03.page.btn.search')}"></button>
+                            </hbox>
+                        </vbox>
+                    </h:form>
+                </panelchildren>
+            </panel>            
+      </panelchildren>
+   </panel>
+</zk>

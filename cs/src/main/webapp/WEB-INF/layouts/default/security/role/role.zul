@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/custom/core" prefix="c"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/WEB-INF/layouts/default/main/template.zul"?>
+<?page id="page" title="${c:l('default.page.global.label.app.title')} ${c:l('security.role.page.label.app.title')}" ?>
+<?link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="/images/favicon.ico"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+       <panel self="@{define(content)}" hflex="1" vflex="1" style="padding:0px;margin:0px" apply="com.bsd.cse.zk.ctrl.security.RoleController">
+           <panelchildren hflex="1">
+            <panel hflex="1">
+                <panelchildren hflex="1" sclass="background_title_content">
+                    <hbox height="30px" hflex="1" sclass="title_content"  align="center" pack="left">
+                        <label style="font-weight:bold;padding-top:10px;padding-left:5px" value="${c:l('security.role.page.label.rolemanagement')}"></label>
+                    </hbox>
+                </panelchildren>
+            </panel>
+            <borderlayout id="roleLayout" vflex="1" style="">
+                <west id="roleWestLayout" width="250px" splittable="true" style="margin:0px" collapsible="true" vflex="1" title="${c:l('security.role.page.label.roletree')}">
+                    <panel id="treePanel" vflex="1" hflex="1">
+                        <panelchildren hflex="1" vflex="1">
+                            <hbox width="100%" height="27px" pack="right" align="bottom" style="padding-bottom:5px;border-bottom:1px solid gray">
+                                <toolbarbutton id="addRoleBtn" image="/images/security/add_role.png" tooltiptext="${c:l('security.role.page.label.addrole')}"></toolbarbutton>
+                            </hbox>
+                            <tree id="roleTree" zclass="z-dottree" style="border:0px;margin-top:5px;overflow:auto" vflex="1" width="100%">
+                                <treecols>
+                                    <treecol />
+                                </treecols>
+                                <treechildren>
+                                </treechildren>
+                            </tree>
+                        </panelchildren>
+                    </panel>
+                </west>
+                <center id="roleCenterLayout" border="0" autoscroll="true">
+                    <panel  id="viewPanel" hflex="1" vflex="1" border="0" title="${c:l('security.role.page.label.roledetail')}">
+                        <panelchildren hflex="1" vflex="1">
+                            <vbox id="role0" vflex="1" hflex="1" pack="center" align="center">
+                                <label style="font-weight:bold;font-size:20px">Role Management</label>
+                            </vbox>
+                            <vbox id="role1" vflex="1" hflex="1">
+                                <hbox vflex="1" hflex="1" widths="400,">
+                                    <grid id="roleGrid"  width="400px"  vflex="1" oddRowSclass="none"   style="margin-top:10px;border:0px solid red">
+                                        <columns>
+                                            <column  style="width:5px"></column>
+                                            <column  style="width:100px"></column>
+                                            <column  style="width:275px"></column>
+                                            <column  style="width:20px"></column>
+                                        </columns>
+                                        <rows >
+                                            <row style="border:0px solid red;vertical-align:top" height="30px" visible="false">
+                                                <label></label>
+                                                <label>${c:l('security.role.page.label.roleid')}</label>
+                                                <textbox id="roleIdTxt" maxlength="25"  hflex="1"></textbox>
+                                                <label sclass="font_bold_red"> </label>
+                                            </row>
+                                            <row style="border:0px solid red;vertical-align:top" height="30px">
+                                                <label></label>
+                                                <label>${c:l('security.role.page.label.rolename')}</label>
+                                                <textbox id="roleNameTxt" maxlength="50"  hflex="1" style="padding-right:1px"></textbox>
+                                                <label sclass="font_bold_red">*</label>
+                                            </row>
+                                            <row style="border:0px;vertical-align:top" >
+                                                <label></label>
+                                                <label>${c:l('security.role.page.label.roledescription')}</label>
+                                                <textbox id="roleDescTxt" rows="5" maxlength="100"  hflex="1" style="padding-right:1px"></textbox>
+                                                <label sclass="font_bold_red">*</label>
+                                            </row>
+                                        </rows>
+                                     </grid>
+                                     <panel hflex="1" vflex="1" style="padding-top:13px;">
+                                         <panelchildren  hflex="1" vflex="1">
+                                             <label value="${c:l('security.role.page.label.permission')}"></label>
+                                             <tree id="functionTree" zclass="z-dottree" style="border:0px;margin-top:5px;margin-left:10px" vflex="1"  multiple="true" checkmark="true">
+                                                <treecols>
+                                                    <treecol/>
+                                                </treecols>
+                                                <treechildren id="functionChild" vflex="1" hflex="1">
+                                                </treechildren>
+                                            </tree> 
+                                         </panelchildren>
+                                     </panel>                                                                                                                                                                                                                      
+                                 </hbox>
+                                 <hbox hflex="1" pack="center" align="center">
+                                    <button id="saveRoleBtn" mold="trendy" height="30px" width="80px" >${c:l('security.role.page.label.rolesave')}</button>
+                                    <!--button id="delRoleBtn" mold="trendy" height="30px" width="80px" >${c:l('security.role.page.label.roledel')}</button-->
+                                    <button id="cancelRoleBtn" mold="trendy" height="30px" width="80px" >${c:l('security.role.page.label.rolecancel')}</button>
+                                    <button id="setRoleBtn" mold="trendy" visible="false" disabled="true"></button>
+                                </hbox>
+                             </vbox>
+                            
+                        </panelchildren>
+                    </panel>
+                </center>
+            </borderlayout>
+          </panelchildren>
+       </panel>
+</zk>

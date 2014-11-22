@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--[$Id: Group.hbm.xml,v 1.4 2011/02/25 13:04:23 thanasit Exp $]-->
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bsd.cse.model.security">
+    <class name="UserInfo" table="CS_USER">
+        <id name="id" column="USER_ID" type="long">
+            <generator class="assigned"/> 
+        </id>
+        <property name="username" column="USERNAME" not-null="true"/>
+        <property name="firstname" column="FIRSTNAME" not-null="true"/>
+        <property name="lastname" column="LASTNAME" not-null="true"/>       
+        <property name="createdDate" column="CREATED_DATE" not-null="true"/>
+        <property name="createdBy" column="CREATED_BY" not-null="true"/>
+        <property name="updatedDate" column="UPDATED_DATE"/>
+        <property name="updatedBy" column="UPDATED_BY"/>                
+        
+    </class>
+</hibernate-mapping>

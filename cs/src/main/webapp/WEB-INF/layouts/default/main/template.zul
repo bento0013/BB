@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul" >
+    <panel hflex="1" vflex="1" >
+        <panelchildren>
+            <include src="/WEB-INF/layouts/default/main/header.zul"/>
+
+            <panel width="100%" vflex="1" >
+                <panelchildren sclass="background_title_content">
+                    <panel hflex="1" vflex="1" sclass="content" >
+                        <panelchildren self="@{insert(content)}" hflex="1" vflex="1">
+                        </panelchildren>
+                    </panel>
+                </panelchildren>
+            </panel>
+
+            <include src="/WEB-INF/layouts/default/main/footer.zul"/>
+        </panelchildren>
+    </panel>
+</zk>

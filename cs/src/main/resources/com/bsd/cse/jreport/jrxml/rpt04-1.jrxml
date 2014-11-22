@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt04" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="font-info" fontName="Tahoma" fontSize="10" isPdfEmbedded="true"/>
+	<style name="Header" style="font-info" fontSize="16" isBold="true">
+		<box>
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="header-left-box" style="font-info" hAlign="Left">
+		<box leftPadding="2">
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="detail-left-box" style="font-info" hAlign="Left" vAlign="Middle">
+		<box leftPadding="2">
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="header-center-box" style="font-info" hAlign="Center" vAlign="Middle">
+		<box leftPadding="2">
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="detail-center-box" style="font-info" hAlign="Center" vAlign="Middle">
+		<box leftPadding="2" rightPadding="2">
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="detail-left-top-bottom-box" style="font-info" hAlign="Left" vAlign="Middle">
+		<box leftPadding="2">
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.0"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="detail-left-bottom-box" style="font-info" hAlign="Left" vAlign="Middle">
+		<box leftPadding="2">
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="detail-left-top-box" style="font-info" hAlign="Left" vAlign="Middle">
+		<box leftPadding="2">
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.0"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="page-left-top-bottom-box" style="font-info" hAlign="Left" vAlign="Middle">
+		<box leftPadding="2">
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="page-right-top-bottom-box" style="font-info" hAlign="Left" vAlign="Middle">
+		<box leftPadding="2">
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<parameter name="requestDate" class="java.lang.String"/>
+	<parameter name="requestBy" class="java.lang.String"/>
+	<parameter name="CS_IMAGE" class="java.lang.String"/>
+	<parameter name="startDateStr" class="java.lang.String"/>
+	<parameter name="period1" class="java.lang.String"/>
+	<parameter name="period2" class="java.lang.String"/>
+	<parameter name="startDate" class="java.lang.String"/>
+	<parameter name="machineName" class="java.lang.String"/>
+	<parameter name="sqlMain" class="java.lang.String"/>
+	<parameter name="partId" class="java.lang.String"/>
+	<parameter name="processId" class="java.lang.String"/>
+	<parameter name="machine0" class="java.lang.String"/>
+	<parameter name="machine1" class="java.lang.String"/>
+	<parameter name="machine2" class="java.lang.String"/>
+	<parameter name="machine3" class="java.lang.String"/>
+	<parameter name="machine4" class="java.lang.String"/>
+	<parameter name="machine5" class="java.lang.String"/>
+	<parameter name="machine6" class="java.lang.String"/>
+	<parameter name="machine7" class="java.lang.String"/>
+	<parameter name="machine8" class="java.lang.String"/>
+	<parameter name="machine9" class="java.lang.String"/>
+	<parameter name="machine10" class="java.lang.String"/>
+	<parameter name="machine11" class="java.lang.String"/>
+	<parameter name="machine12" class="java.lang.String"/>
+	<parameter name="machine13" class="java.lang.String"/>
+	<parameter name="machine14" class="java.lang.String"/>
+	<parameter name="machine15" class="java.lang.String"/>
+	<parameter name="machine16" class="java.lang.String"/>
+	<parameter name="machine17" class="java.lang.String"/>
+	<parameter name="machine18" class="java.lang.String"/>
+	<parameter name="machine19" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[$P!{sqlMain}]]>
+	</queryString>
+	<field name="part_no" class="java.lang.String"/>
+	<field name="part_name" class="java.lang.String"/>
+	<field name="process_name" class="java.lang.String"/>
+	<field name="semi_name" class="java.lang.String"/>
+	<field name="measurement_position" class="java.lang.Long"/>
+	<field name="min_duration" class="java.math.BigDecimal"/>
+	<field name="max_duration" class="java.math.BigDecimal"/>
+	<field name="checkpoint_type_name" class="java.lang.String"/>
+	<field name="checkpoint_unit_name" class="java.lang.String"/>
+	<field name="customername" class="java.lang.String"/>
+	<field name="measurement_name" class="java.lang.String"/>
+	<field name="value1" class="java.math.BigDecimal"/>
+	<field name="value2" class="java.math.BigDecimal"/>
+	<field name="value3" class="java.math.BigDecimal"/>
+	<field name="value4" class="java.math.BigDecimal"/>
+	<field name="value5" class="java.math.BigDecimal"/>
+	<field name="value6" class="java.math.BigDecimal"/>
+	<field name="value7" class="java.math.BigDecimal"/>
+	<field name="value8" class="java.math.BigDecimal"/>
+	<field name="value9" class="java.math.BigDecimal"/>
+	<field name="value10" class="java.math.BigDecimal"/>
+	<field name="value11" class="java.math.BigDecimal"/>
+	<field name="value12" class="java.math.BigDecimal"/>
+	<field name="value13" class="java.math.BigDecimal"/>
+	<field name="value14" class="java.math.BigDecimal"/>
+	<field name="value15" class="java.math.BigDecimal"/>
+	<field name="value16" class="java.math.BigDecimal"/>
+	<field name="value17" class="java.math.BigDecimal"/>
+	<field name="value18" class="java.math.BigDecimal"/>
+	<field name="value19" class="java.math.BigDecimal"/>
+	<field name="value20" class="java.math.BigDecimal"/>
+	<field name="image" class="java.lang.String"/>
+	<variable name="checkpoint" class="java.lang.String">
+		<variableExpression><![CDATA[$F{checkpoint_type_name}+"\n"
++$F{checkpoint_unit_name}+"\n"
++String.valueOf($F{min_duration}.setScale(3))+"-"
++String.valueOf($F{max_duration}.setScale(3))+"\n"
++$F{measurement_name}]]></variableExpression>
+		<initialValueExpression><![CDATA[$F{checkpoint_type_name}+"\n"
++$F{checkpoint_unit_name}+"\n"
++String.valueOf($F{min_duration}.setScale(3))+"-"
++String.valueOf($F{max_duration}.setScale(3))+"\n"
++$F{measurement_name}]]></initialValueExpression>
+	</variable>
+	<group name="partName" isReprintHeaderOnEachPage="true">
+		<groupExpression><![CDATA[$F{part_name}]]></groupExpression>
+		<groupHeader>
+			<band height="60">
+				<staticText>
+					<reportElement style="detail-left-box" x="0" y="45" width="165" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Part Name (ชื่อชิ้นงาน) :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="620" y="45" width="182" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Process Step (ขั้นตอนการผลิต)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="165" y="45" width="153" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Part No (หมายเลข) :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="318" y="45" width="150" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Line(สายการผลิต)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="468" y="45" width="152" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Machine(เครื่องจักร)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="page-left-top-bottom-box" x="662" y="30" width="62" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Request By :]]></text>
+				</staticText>
+				<textField evaluationTime="Report">
+					<reportElement style="page-right-top-bottom-box" x="762" y="0" width="40" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="page-left-top-bottom-box" x="662" y="0" width="100" height="15"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="page-right-top-bottom-box" x="724" y="30" width="78" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{requestBy}]]></textFieldExpression>
+				</textField>
+				<textField pattern="">
+					<reportElement style="page-right-top-bottom-box" x="724" y="15" width="78" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{requestDate}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="page-left-top-bottom-box" x="662" y="15" width="62" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Request Date :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Header" x="250" y="0" width="412" height="45"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[ใบรายงานผลการตรวจสอบระหว่างการผลิต
+Inprocess Checksheet  Report]]></text>
+				</staticText>
+				<image>
+					<reportElement style="header-left-box" x="0" y="0" width="250" height="45"/>
+					<imageExpression class="java.lang.String"><![CDATA[$P{CS_IMAGE}]]></imageExpression>
+				</image>
+			</band>
+			<band height="15">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="detail-left-box" stretchType="RelativeToTallestObject" x="0" y="0" width="165" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{part_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="detail-left-box" stretchType="RelativeToTallestObject" x="165" y="0" width="153" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{part_no}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="detail-left-box" stretchType="RelativeToTallestObject" x="468" y="0" width="152" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{machineName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="detail-left-box" stretchType="RelativeToTallestObject" x="620" y="0" width="182" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{process_name}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="detail-left-box" x="318" y="0" width="150" height="15"/>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</band>
+			<band height="15">
+				<staticText>
+					<reportElement style="detail-left-box" stretchType="RelativeToTallestObject" x="572" y="0" width="44" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[วันที่ผลิต]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" stretchType="RelativeToTallestObject" x="235" y="0" width="83" height="15"/>
+					<textElement>
+						<font fontName="Tahoma" size="8"/>
+					</textElement>
+					<text><![CDATA[Material(วัตถุดิบ)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" stretchType="RelativeToTallestObject" x="686" y="0" width="52" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[กะการผลิต]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" stretchType="RelativeToTallestObject" x="114" y="0" width="51" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[กะการผลิต]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="detail-left-box" stretchType="RelativeToTallestObject" x="44" y="0" width="70" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{startDateStr}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="detail-left-box" stretchType="RelativeToTallestObject" x="165" y="0" width="70" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{period1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="detail-left-box" stretchType="RelativeToTallestObject" x="616" y="0" width="70" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{startDateStr}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="detail-left-box" stretchType="RelativeToTallestObject" x="318" y="0" width="254" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{semi_name}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="detail-left-box" x="0" y="0" width="44" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[วันที่ผลิต]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="detail-left-box" stretchType="RelativeToTallestObject" x="738" y="0" width="64" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{period2}]]></textFieldExpression>
+				</textField>
+			</band>
+			<band height="181">
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement style="detail-center-box" x="0" y="0" width="802" height="181"/>
+					<imageExpression class="java.lang.String"><![CDATA[$F{image}]]></imageExpression>
+				</image>
+			</band>
+			<band height="30">
+				<staticText>
+					<reportElement style="header-center-box" x="137" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[2]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="382" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[9]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="207" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[4]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="242" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[5]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="0" y="0" width="32" height="30"/>
+					<textElement/>
+					<text><![CDATA[No.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="102" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="32" y="0" width="70" height="30"/>
+					<textElement/>
+					<text><![CDATA[จุดตรวจสอบ/
+ผู้ตรวจ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="417" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[10]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="277" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[6]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="172" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[3]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="312" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[7]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="627" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[6]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="522" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[3]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="767" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[10]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="697" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[8]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="662" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[7]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="487" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[2]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="732" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[9]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="592" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[5]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="452" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="557" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[4]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="347" y="15" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[8]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="102" y="0" width="350" height="15"/>
+					<textElement/>
+					<text><![CDATA[Day]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="header-center-box" x="452" y="0" width="350" height="15"/>
+					<textElement/>
+					<text><![CDATA[Night]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="15">
+				<staticText>
+					<reportElement style="detail-left-box" x="0" y="0" width="238" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[ชื่อลูกค้า]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="238" y="0" width="80" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[ชื่อผู้ผลิต/วันที่]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="318" y="0" width="122" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[QC ตรวจสอบคุณภาพ/วันที่]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="440" y="0" width="80" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[QC อนุมัติ/วันที่]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="600" y="0" width="122" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[QC ตรวจสอบคุณภาพ/วันที่]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="520" y="0" width="80" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[ชื่อผู้ผลิต/วันที่]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="722" y="0" width="80" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[QC อนุมัติ/วันที่]]></text>
+				</staticText>
+			</band>
+			<band height="15">
+				<textField isStretchWithOverflow="true">
+					<reportElement style="detail-left-top-bottom-box" stretchType="RelativeToTallestObject" x="0" y="0" width="238" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{customername}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="detail-left-box" stretchType="RelativeToTallestObject" x="440" y="0" width="80" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" stretchType="RelativeToTallestObject" x="722" y="0" width="80" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="318" y="0" width="122" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="600" y="0" width="122" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="238" y="0" width="80" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="520" y="0" width="80" height="15"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</band>
+			<band height="15">
+				<staticText>
+					<reportElement style="detail-left-box" x="238" y="0" width="80" height="15"/>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="318" y="0" width="122" height="15"/>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="440" y="0" width="80" height="15"/>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="520" y="0" width="80" height="15"/>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="600" y="0" width="122" height="15"/>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-box" x="722" y="0" width="80" height="15"/>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="detail-left-bottom-box" x="0" y="0" width="238" height="15"/>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="382" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value9}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="207" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="102" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="172" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="417" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value10}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="242" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value5}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="347" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value8}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="137" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="312" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value7}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="277" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value6}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="697" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value18}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="767" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value20}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="662" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value17}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="452" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value11}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="732" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value19}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="557" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value14}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="487" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value12}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="522" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value13}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="592" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value15}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="627" y="0" width="35" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{value16}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0" isBlankWhenNull="true">
+				<reportElement style="detail-left-box" stretchType="RelativeToTallestObject" x="0" y="0" width="32" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{measurement_position}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="detail-center-box" stretchType="RelativeToTallestObject" x="32" y="0" width="70" height="15"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{checkpoint}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<noData>
+		<band height="91">
+			<staticText>
+				<reportElement style="detail-center-box" x="0" y="75" width="802" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[No Records]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement style="page-right-top-bottom-box" x="762" y="0" width="40" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Header" x="250" y="0" width="426" height="45"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ใบรายงานผลการตรวจสอบระหว่างการผลิต
+Inprocess Checksheet  Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="page-left-top-bottom-box" x="676" y="30" width="62" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Request By :]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="page-right-top-bottom-box" x="738" y="30" width="64" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{requestBy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="page-left-top-bottom-box" x="676" y="0" width="86" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement style="header-left-box" x="0" y="0" width="250" height="45"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{CS_IMAGE}]]></imageExpression>
+			</image>
+			<textField pattern="">
+				<reportElement style="page-right-top-bottom-box" x="738" y="15" width="64" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{requestDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="page-left-top-bottom-box" x="676" y="15" width="62" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Request Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="137" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="382" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[9]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="207" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="242" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="0" y="45" width="32" height="30"/>
+				<textElement/>
+				<text><![CDATA[No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="102" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="32" y="45" width="70" height="30"/>
+				<textElement/>
+				<text><![CDATA[จุดตรวจสอบ/
+ผู้ตรวจ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="417" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[10]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="277" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[6]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="172" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="312" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[7]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="627" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[6]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="522" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="767" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[10]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="697" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[8]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="662" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[7]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="487" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="732" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[9]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="592" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="452" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="557" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="347" y="60" width="35" height="15"/>
+				<textElement/>
+				<text><![CDATA[8]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="102" y="45" width="350" height="15"/>
+				<textElement/>
+				<text><![CDATA[Day]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header-center-box" x="452" y="45" width="350" height="15"/>
+				<textElement/>
+				<text><![CDATA[Night]]></text>
+			</staticText>
+		</band>
+	</noData>
+</jasperReport>

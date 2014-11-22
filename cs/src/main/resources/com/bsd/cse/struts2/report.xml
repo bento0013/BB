@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>        
+    <package name="report" extends="secure" namespace="/secure/report">
+       <action name="rpt01" class="com.bsd.cse.struts2.action.rpt.ReportAction" method="rpt01">
+           <interceptor-ref name="securityStack" />           
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10401</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10401</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/report/rpt01.zul</param>
+           </result>
+       </action>
+       <action name="report01" class="com.bsd.cse.struts2.action.rpt.Report01Action" method="report">
+            <interceptor-ref name="securityStack" />
+            <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10401</param>
+            </interceptor-ref>           
+            <result type="stream" name="pdf">
+                <param name="contentDisposition">filename=report01.pdf</param>
+                <param name="contentType">application/pdf</param>
+                <param name="inputName">reportStream</param>
+                <param name="bufferSize">4096</param>
+            </result>
+            <result type="dispatcher" name="reporterror">
+                <param name="location">/WEB-INF/layouts/defaults/error.zul</param>
+            </result>
+        </action>  
+       <action name="rpt02" class="com.bsd.cse.struts2.action.rpt.ReportAction" method="rpt02">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10402</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10402</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/report/rpt02.zul</param>
+           </result>
+       </action>
+       <action name="report02" class="com.bsd.cse.struts2.action.rpt.Report02Action" method="report">
+            <interceptor-ref name="securityStack" />
+            <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10402</param>
+            </interceptor-ref>
+            <result type="stream" name="pdf">
+                <param name="contentDisposition">filename=report02.pdf</param>
+                <param name="contentType">application/pdf</param>
+                <param name="inputName">reportStream</param>
+                <param name="bufferSize">4096</param>
+            </result>
+            <result type="dispatcher" name="reporterror">
+                <param name="location">/WEB-INF/layouts/defaults/error.zul</param>
+            </result>
+        </action> 
+       
+       <action name="rpt03" class="com.bsd.cse.struts2.action.rpt.ReportAction" method="rpt03">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10403</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10403</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/report/rpt03.zul</param>
+           </result>
+       </action>
+       <action name="report03" class="com.bsd.cse.struts2.action.rpt.Report03Action" method="report">
+            <interceptor-ref name="securityStack" />
+            <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10403</param>
+            </interceptor-ref>
+            <result type="stream" name="pdf">
+                <param name="contentDisposition">filename=report03.pdf</param>
+                <param name="contentType">application/pdf</param>
+                <param name="inputName">reportStream</param>
+                <param name="bufferSize">4096</param>
+            </result>
+            <result type="dispatcher" name="reporterror">
+                <param name="location">/WEB-INF/layouts/defaults/error.zul</param>
+            </result>
+        </action>
+       <action name="rpt04" class="com.bsd.cse.struts2.action.rpt.ReportAction" method="rpt04">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10404</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10404</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/report/rpt04.zul</param>
+           </result>
+       </action>
+       <action name="report04" class="com.bsd.cse.struts2.action.rpt.Report04Action" method="report">
+            <interceptor-ref name="securityStack" />
+            <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10404</param>
+            </interceptor-ref>
+            <result type="stream" name="pdf">
+                <param name="contentDisposition">filename=report04.pdf</param>
+                <param name="contentType">application/pdf</param>
+                <param name="inputName">reportStream</param>
+                <param name="bufferSize">4096</param>
+            </result>
+            <result type="dispatcher" name="reporterror">
+                <param name="location">/WEB-INF/layouts/defaults/error.zul</param>
+            </result>
+        </action> 
+       <action name="rpt05" class="com.bsd.cse.struts2.action.rpt.ReportAction" method="rpt05">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10402</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10402</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/report/rpt05.zul</param>
+           </result>
+       </action>
+        <action name="report05" class="com.bsd.cse.struts2.action.rpt.Report05Action" method="report">
+            <interceptor-ref name="securityStack" />
+            <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10405</param>
+            </interceptor-ref>
+            <result type="stream" name="pdf">
+                <param name="contentDisposition">filename=report05.pdf</param>
+                <param name="contentType">application/pdf</param>
+                <param name="inputName">reportStream</param>
+                <param name="bufferSize">4096</param>
+            </result>
+            <result type="dispatcher" name="reporterror">
+                <param name="location">/WEB-INF/layouts/defaults/error.zul</param>
+            </result>
+        </action> 
+       <action name="rpt06" class="com.bsd.cse.struts2.action.rpt.ReportAction" method="rpt06">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10406</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10406</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/report/rpt06.zul</param>
+           </result>
+       </action>
+        <action name="report06" class="com.bsd.cse.struts2.action.rpt.Report06Action" method="report">
+            <interceptor-ref name="securityStack" />
+            <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10406</param>
+            </interceptor-ref>
+            <result type="stream" name="pdf">
+                <param name="contentDisposition">filename=report06.pdf</param>
+                <param name="contentType">application/pdf</param>
+                <param name="inputName">reportStream</param>
+                <param name="bufferSize">4096</param>
+            </result>
+            <result type="dispatcher" name="reporterror">
+                <param name="location">/WEB-INF/layouts/defaults/error.zul</param>
+            </result>
+        </action>
+       <action name="rpt07" class="com.bsd.cse.struts2.action.rpt.ReportAction" method="rpt07">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10407</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10407</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/report/rpt07.zul</param>
+           </result>
+       </action>
+       <action name="report07" class="com.bsd.cse.struts2.action.rpt.Report07Action" method="report">
+            <interceptor-ref name="securityStack" />
+            <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10407</param>
+            </interceptor-ref>
+            <result type="dispatcher" name="report">
+                <param name="location">/WEB-INF/layouts/default/report/report079.zul</param>
+            </result>
+            <result type="dispatcher" name="reporterror">
+                <param name="location">/WEB-INF/layouts/defaults/error.zul</param>
+            </result>
+        </action>
+       
+       <action name="rpt08" class="com.bsd.cse.struts2.action.rpt.ReportAction" method="rpt08">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10408</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10408</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/report/rpt08.zul</param>
+           </result>
+       </action>
+       <action name="report08" class="com.bsd.cse.struts2.action.rpt.Report08Action" method="report">
+            <interceptor-ref name="securityStack" />
+            <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10408</param>
+            </interceptor-ref>
+            <result type="stream" name="pdf">
+                <param name="contentDisposition">filename=report08.pdf</param>
+                <param name="contentType">application/pdf</param>
+                <param name="inputName">reportStream</param>
+                <param name="bufferSize">4096</param>
+            </result>
+            <result type="dispatcher" name="reporterror">
+                <param name="location">/WEB-INF/layouts/defaults/error.zul</param>
+            </result>
+        </action>
+        
+       <action name="rpt09" class="com.bsd.cse.struts2.action.rpt.ReportAction" method="rpt09">
+           <interceptor-ref name="securityStack" />
+           <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10409</param>
+           </interceptor-ref>
+           <interceptor-ref name="menulog">
+                <param name="requiredPermissions">10409</param>
+           </interceptor-ref>
+           <result type="dispatcher" name="success">
+                <param name="location">/WEB-INF/layouts/default/report/rpt09.zul</param>
+           </result>
+       </action>
+       <action name="report09" class="com.bsd.cse.struts2.action.rpt.Report09Action" method="report">
+            <interceptor-ref name="securityStack" />
+            <interceptor-ref name="authorization">
+                <param name="requiredPermissions">10409</param>
+            </interceptor-ref>
+            <result type="dispatcher" name="report">
+                <param name="location">/WEB-INF/layouts/default/report/report079.zul</param>
+            </result>
+            <result type="dispatcher" name="reporterror">
+                <param name="location">/WEB-INF/layouts/defaults/error.zul</param>
+            </result>
+        </action> 
+
+       
+       
+    </package>
+    
+</struts>

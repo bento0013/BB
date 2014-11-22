@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--[$Id: Group.hbm.xml,v 1.4 2011/02/25 13:04:23 thanasit Exp $]-->
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bsd.cse.model.backoffice.part">
+    <class name="Checkpoint" table="CS_CHECKPOINT" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="CHECKPOINT_ID" type="long">
+            <generator class="sequence">
+                <param name="sequence">checkpoint_seq</param>
+            </generator>
+        </id>        
+        <many-to-one name="part" class="com.bsd.cse.model.backoffice.part.Part" column="PART_ID" not-null="true"/>
+        <many-to-one name="checkpointType" class="com.bsd.cse.model.backoffice.part.CheckpointType" column="CHECKPOINT_TYPE_ID" not-null="false"/>
+        <many-to-one name="checkpointUnit" class="com.bsd.cse.model.backoffice.part.CheckpointUnit" column="CHECKPOINT_UNIT_ID" not-null="false"/>
+        <many-to-one name="process" class="com.bsd.cse.model.backoffice.part.Process" column="PROCESS_ID" not-null="true"/>
+        <property name="position" column="POSITION_POINT" not-null="true"/>                
+        <many-to-one name="measurementType" class="com.bsd.cse.model.backoffice.measurement.MeasurementToolType" column="MEASUREMENT_TYPE_ID"  not-null="false"/>
+        <property name="imagePath" column="IMAGE_PATH" not-null="false"/>
+        <property name="spc" column="SPC_FLAG" />
+        <property name="checkpointName" column="CHECKPOINT_NAME" />
+        <property name="minDuration" column="MIN_DURATION" not-null="true"/>
+        <property name="maxDuration" column="MAX_DURATION" not-null="true"/>
+        <property name="createdDate" column="CREATED_DATE" />        
+        <many-to-one class="com.bsd.cse.model.security.UserInfo" name="createdBy" column="CREATED_BY" />
+        <property name="updatedDate" column="UPDATED_DATE" />
+        <many-to-one class="com.bsd.cse.model.security.UserInfo" name="updatedBy" column="UPDATED_BY" />
+        
+    </class>
+</hibernate-mapping>
